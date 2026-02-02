@@ -73,14 +73,7 @@
       background-repeat:repeat;
       background-size:420px 420px;
       background-position:40px 20px;
-      background-image:url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'>\
-  <rect width='100%25' height='100%25' fill='none'/>\
-  <g transform='translate(40,40) rotate(-18 170 170)'>\
-    <text x='0' y='150' font-family='Georgia, serif' font-size='170' fill='%238B1E1E' opacity='0.25'>ॐ</text>\
-    <text x='10' y='210' font-family='Georgia, serif' font-size='44' fill='%23E68A00' opacity='0.35'>Om Shakti</text>\
-  </g>\
-</svg>");
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'>\n  <rect width='100%25' height='100%25' fill='none'/>\n  <g transform='translate(40,40) rotate(-18 170 170)'>\n    <text x='0' y='150' font-family='Georgia, serif' font-size='170' fill='%238B1E1E' opacity='0.25'>ॐ</text>\n    <text x='10' y='210' font-family='Georgia, serif' font-size='44' fill='%23E68A00' opacity='0.35'>Om Shakti</text>\n  </g>\n</svg>");
     }
 
     a{ color:inherit; text-decoration:none; }
@@ -114,7 +107,6 @@
       padding: 12px 18px;
       padding-left: calc(18px + var(--safe-left));
       padding-right: calc(18px + var(--safe-right));
-      position:relative; /* for absolute nav in mobile */
     }
     .brand{
       display:flex; align-items:center; gap:10px;
@@ -128,8 +120,6 @@
       background: var(--temple-red);
       box-shadow: 0 0 0 6px rgba(139,30,30,.12);
     }
-
-    /* Nav */
     .nav{
       display:flex;
       gap:10px;
@@ -168,21 +158,6 @@
     }
     .lang-toggle button.active{
       background: rgba(244,163,0,.22);
-    }
-
-    /* Nav toggle (hamburger) */
-    .nav-toggle{
-      display:none;
-      align-items:center;
-      justify-content:center;
-      background:transparent;
-      border:1px solid rgba(139,30,30,.12);
-      padding:8px 10px;
-      border-radius:10px;
-      cursor:pointer;
-      font-size:18px;
-      line-height:1;
-      color:var(--temple-red);
     }
 
     section{ padding: 16px 0; scroll-margin-top: 90px; } /* ✅ no header overlap */
@@ -450,31 +425,6 @@
       text-align:center;
     }
 
-    /* ===== Responsive nav behavior ===== */
-    @media (max-width: 860px) {
-      .nav {
-        display: none; /* hidden by default, toggled open via .open */
-        position: absolute;
-        top: calc(100% + 2px);
-        left: 0;
-        right: 0;
-        background: rgba(255,241,214,0.98);
-        padding: 12px calc(18px + var(--safe-left)) 12px calc(18px + var(--safe-right));
-        flex-direction: column;
-        gap: 8px;
-        z-index: 60;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      }
-      .nav.open { display:flex; }
-      .nav .pill { width:100%; text-align:left; }
-      .nav .lang-toggle { align-self:flex-start; }
-      .nav-toggle { display:inline-flex; }
-      /* make CTA full width in dropdown to be easy to tap */
-      .nav .pill.cta { width:100%; text-align:center; }
-    }
-
     /* ✅ Respect user settings */
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
@@ -495,7 +445,173 @@
     const CALENDLY_URL     = "https://calendly.com/your-calendly/temple-services";
     const SARAVANA_PHOTO   = "saravana.jpg";
 
-    /* ... existing JS (makeBg, SERVICES, I18N, etc.) ... */
+    function makeBg(kind){
+      const palette = {
+        house:{a:"#F4A300", b:"#8B1E1E", c:"#FFF1D6", icon:"🏠"},
+        satya:{a:"#F6B73C", b:"#A11B1B", c:"#FFF6E5", icon:"🪔"},
+        homam:{a:"#FFB000", b:"#7A1313", c:"#FFE2B2", icon:"🔥"},
+        arch:{a:"#F4A300", b:"#6B2B2B", c:"#FFF1D6", icon:"🙏"},
+        naming:{a:"#F8C35A", b:"#8B1E1E", c:"#FFF6E5", icon:"👶"},
+        consult:{a:"#F2A000", b:"#8B1E1E", c:"#FFE8B8", icon:"🗓️"},
+      };
+      const p = palette[kind] || palette.house;
+      const svg =
+        `
+        <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'>
+          <defs>
+            <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+              <stop offset='0' stop-color='${p.a}' stop-opacity='0.95'/>
+              <stop offset='1' stop-color='${p.b}' stop-opacity='0.95'/>
+            </linearGradient>
+            <radialGradient id='r' cx='30%' cy='20%' r='70%'>
+              <stop offset='0' stop-color='${p.c}' stop-opacity='0.9'/>
+              <stop offset='1' stop-color='${p.c}' stop-opacity='0'/>
+            </radialGradient>
+          </defs>
+          <rect width='100%' height='100%' fill='url(#g)'/>
+          <rect width='100%' height='100%' fill='url(#r)'/>
+          <g opacity='0.22' fill='none' stroke='white' stroke-width='6'>
+            <path d='M120 620 Q600 220 1080 620' />
+            <path d='M200 620 Q600 300 1000 620' />
+            <rect x='260' y='610' width='680' height='140' rx='32' />
+          </g>
+          <g opacity='0.26'>
+            <text x='80' y='210' font-family='Georgia, serif' font-size='160' fill='white'>ॐ</text>
+            <text x='88' y='280' font-family='Georgia, serif' font-size='44' fill='white'>Om Shakti</text>
+          </g>
+          <g opacity='0.95'>
+            <text x='1040' y='150' text-anchor='middle' font-size='92'>${p.icon}</text>
+          </g>
+        </svg>
+      `;
+      return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+    }
+
+    const SERVICES = [
+      { key:"srv_house", kind:"house", tags:["In-person","Home"], duration:"90–150 min" },
+      { key:"srv_satya", kind:"satya", tags:["In-person","Online"], duration:"60–120 min" },
+      { key:"srv_homam", kind:"homam", tags:["In-person"], duration:"90–180 min" },
+      { key:"srv_archana", kind:"arch", tags:["Online","Temple"], duration:"15–30 min" },
+      { key:"srv_naming", kind:"naming", tags:["In-person"], duration:"60–120 min" },
+      { key:"srv_consult", kind:"consult", tags:["Online"], duration:"20–30 min" },
+    ];
+
+    const I18N = {
+      en: {
+        site_name: SITE_NAME,
+        brand: SITE_NAME + " • Saravana",
+        nav_about:"About", nav_services:"Services", nav_book:"Book", nav_contact:"Contact", nav_booknow:"Book now",
+        hero_title:"Trusted rituals & guidance — in person or online.",
+        hero_subtitle_html:"Saravana is a temple priest with <strong>40+ years</strong> of experience conducting traditional ceremonies with devotion and care in <span id='templeCityInline'></span>.",
+        badge1:"✔ Traditional Vedic rituals", badge2:"✔ Clear preparation checklist", badge3:"✔ English / Tamil / Telugu",
+        btn_book:"📅 Book a slot", btn_whatsapp:"💬 WhatsApp", btn_call:"📞 Call",
+        hero_mini:"Prefer enquiry first? Use WhatsApp or book a short consultation in the calendar.",
+        kpi1_num:"40+", kpi1_label:"Years experience",
+        kpi2_num:"Online", kpi2_label:"Puja & guidance",
+        kpi3_num:"Home", kpi3_label:"House rituals",
+        kpi4_num:"Temple", kpi4_label:"Special archana",
+        note:"Book instantly via Calendly, or message for custom requirements, materials list, and pricing.",
+        quickbook:"⚡ Quick Book (popup)",
+        about_title:"About",
+        about_p1_html:"Saravana is a dedicated temple priest with around <strong>40 years</strong> of experience performing sacred rituals and guiding families through traditional ceremonies. He offers services <strong>in person</strong> (home/temple) and <strong>online</strong> (consultation, sankalpam guidance, virtual puja support).",
+        about_p2:"You can book a suitable time below, or message directly for special requests and preparation details.",
+        about_photo_note:"Replace saravana.jpg with his real photo.",
+        services_title:"Services",
+        enquire_btn:"Enquire", book_btn_small:"Book",
+        other_title:"Other services",
+        other_desc:"If you need a specific ritual not listed above, please message Saravana. He can guide on muhurtham, samagri (items list), procedure, and duration based on your tradition.",
+        other_chip1:"Daily puja support",
+        other_chip2:"Vastu / graha shanti",
+        other_chip3:"Death ceremonies",
+        other_chip4:"Festival special pujas",
+        other_chip5:"Temple event support",
+        book_title:"Book / Enquire",
+        how_title:"How booking works",
+        how_1:"Select a convenient date/time.",
+        how_2:"Add notes (service type, location, preferred language).",
+        how_3:"You’ll receive confirmation and next steps.",
+        email_label:"Email",
+        wa_label:"WhatsApp",
+        wa_sub:"Fast enquiries & details",
+        tip:"Tip: In your note, mention “Service + Date + Location + Any special request”.",
+        quickbook:"⚡ Quick Book (popup)",
+        template_title:"Enquiry note template",
+        template_html:"Vanakkam 🙏<br/>I would like to book <strong>[Service]</strong> on <strong>[Date]</strong> at <strong>[Location]</strong>.<br/>Preferred language: <strong>[Tamil/English/Telugu]</strong>.<br/>Notes: <strong>[Any special requirement]</strong>.",
+        copy_btn:"📋 Copy message",
+        template_tip:"Use this in WhatsApp or inside the booking notes in the calendar.",
+        footer:"All rights reserved",
+        srv_house_title:"Griha Pravesham / Housewarming Puja",
+        srv_house_desc:"Auspicious rituals for new home entry, vastu & blessings.",
+        srv_satya_title:"Satyanarayana Puja",
+        srv_satya_desc:"Traditional puja for prosperity, wellbeing, and gratitude.",
+        srv_homam_title:"Homam / Havan",
+        srv_homam_desc:"Fire ritual with sankalpam for specific intentions and peace.",
+        srv_archana_title:"Archana / Special Pooja",
+        srv_archana_desc:"Customized archana for deity and your family sankalpam.",
+        srv_naming_title:"Naming / Annaprashana",
+        srv_naming_desc:"Rituals for newborn milestones and family blessings.",
+        srv_consult_title:"Consultation (Muhurtham / Ritual Guidance)",
+        srv_consult_desc:"Guidance on dates, procedures, and preparation."
+      },
+      ta: {
+        site_name: SITE_NAME,
+        brand: SITE_NAME + " • சரவணா",
+        nav_about:"பற்றி", nav_services:"சேவைகள்", nav_book:"முன்பதிவு", nav_contact:"தொடர்பு", nav_booknow:"இப்போது முன்பதிவு",
+        hero_title:"நேரில் அல்லது ஆன்லைனில் — நம்பிக்கைக்குரிய பூஜைகள் & வழிகாட்டல்.",
+        hero_subtitle_html:"சரவணா அவர்கள் <strong>40+ ஆண்டுகள்</strong> அனுபவமுள்ள கோவில் அர்ச்சகர். <span id='templeCityInline'></span> பகுதியில் பக்தியுடன் பாரம்பரிய பூஜைகள் செய்து வருகிறார்.",
+        badge1:"✔ பாரம்பரிய வேத முறைகள்", badge2:"✔ தயாரிப்பு பட்டியல் வழிகாட்டல்", badge3:"✔ தமிழ் / ஆங்கிலம் / தெலுங்கு",
+        btn_book:"📅 நேரம் முன்பதிவு", btn_whatsapp:"💬 WhatsApp", btn_call:"📞 அழைப்பு",
+        hero_mini:"முதலில் விசாரிக்க வேண்டுமா? WhatsApp செய்யுங்கள் அல்லது குறுகிய ஆலோசனையை முன்பதிவு செய்யுங்கள்.",
+        kpi1_num:"40+", kpi1_label:"ஆண்டுகள் அனுபவம்",
+        kpi2_num:"ஆன்லைன்", kpi2_label:"பூஜை & வழிகாட்டல்",
+        kpi3_num:"வீடு", kpi3_label:"வீட்டு பூஜைகள்",
+        kpi4_num:"கோவை", kpi4_label:"சிறப்பு அர்ச்சனை",
+        note:"Calendly மூலம் நேரம் முன்பதிவு செய்யலாம் அல்லது தேவைகள்/சாமான்கள்/கட்டண விவரங்களுக்கு செய்தி செய்யலாம்.",
+        quickbook:"⚡ விரைவு முன்பதிவு (popup)",
+        about_title:"பற்றி",
+        about_p1_html:"சரவணா அவர்கள் <strong>40 ஆண்டுகளுக்கும் மேல்</strong> அனுபவமுள்ள கோவில் அர்ச்சகர். குடும்ப நிகழ்ச்சிகளுக்கான பாரம்பரிய சடங்களுக்கான பூஜைகள், ஹோமங்கள் மற்றும் ஆலோசனைகள் ஆகியவற்றை பக்தியுடன் நடத்துகிறார். <strong>நேரில்</strong> (வீடு/கோவில்) மற்றும் <strong>ஆன்லைன்</strong> (ஆலோசனை, சங்கல்ப வழிகாட்டல்) சேவைகள் வழங்குகிறான்.",
+        about_p2:"கீழே நேரம் முன்பதிவு செய்யலாம் அல்லது சிறப்பு தேவைகளுக்கு நேரடியாக செய்தி செய்யலாம்.",
+        about_photo_note:"saravana.jpg ஐ உண்மை புகைப்படத்துடன் மாற்றவும்.",
+        services_title:"சேவைகள்",
+        enquire_btn:"விசாரிக்க", book_btn_small:"முன்பதிவு",
+        other_title:"மற்ற சேவைகள்",
+        other_desc:"மேலே பட்டியலில் இல்லாத சடங்குகள் வேண்டுமெனில் தயவுசெய்து சரவணாவை தொடர்புகொள்ளுங்கள். முகூர்த்தம், சமக்ரி பட்டியல், நடைமுறை, கால அளவு போன்றவற்றை வழிகாட்டுவார்.",
+        other_chip1:"தினசரி பூஜை உதவி",
+        other_chip2:"வாஸ்து / கிரக சாந்தி",
+        other_chip3:"அந்திம சடங்குகள்",
+        other_chip4:"திருவிழா சிறப்பு பூஜைகள்",
+        other_chip5:"கோவில் நிகழ்ச்சி உதவி",
+        book_title:"முன்பதிவு / விசாரணை",
+        how_title:"முன்பதிவு எப்படி?",
+        how_1:"உங்களுக்கு வசதியான தேதி/நேரம் தேர்வு செய்யுங்கள்.",
+        how_2:"சேவை, இடம், மொழி போன்ற குறிப்புகளை சேர்க்கவும்.",
+        how_3:"உறுதிப்படுத்தல் & அடுத்த படிகள் கிடைக்கும்.",
+        email_label:"மின்னஞ்சல்",
+        wa_label:"WhatsApp",
+        wa_sub:"விரைவான விசாரணை",
+        tip:"குறிப்பு: “சேவை + தேதி + இடம் + சிறப்பு வேண்டுகோள்” என்று எழுதுங்கள்.",
+        contact_title:"தொடர்பு",
+        call_label:"அழைப்பு",
+        location_label:"இடம்",
+        template_title:"விசாரணை செய்தி மாதிரி",
+        template_html:"வணக்கம் 🙏<br/>நான் <strong>[சேவை]</strong> ஐ <strong>[தேதி]</strong> அன்று <strong>[இடம்]</strong> இல் முன்பதிவு செய்ய விரும்புகிறேன்.<br/>மொழி: <strong>[தமிழ்/ஆங்கிலம்/தெலுங்கு]</strong>.<br/>குறிப்பு: <strong>[சிறப்பு வேண்டுகோள்]</strong>.",
+        copy_btn:"📋 செய்தியை நகலெடு",
+        template_tip:"இந்த செய்தியை WhatsApp அல்லது முன்பதிவு குறிப்புகளில் பயன்படுத்துங்கள்.",
+        footer:"அனைத்து உரிமைகளும் பாதுகாக்கப்படுகின்றன",
+        srv_house_title:"கிருஹப் பிரவேசம் / இல்லப்புகு பூஜை",
+        srv_house_desc:"புதிய வீட்டிற்கு வாஸ்து & ஆசீர்வாத பூஜை.",
+        srv_satya_title:"சத்யநாராயண பூஜை",
+        srv_satya_desc:"செல்வம், நலம், மன அமைதிக்கான பூஜை.",
+        srv_homam_title:"ஹோமம் / ஹவனம்",
+        srv_homam_desc:"சங்கல்பத்துடன் தீயாக பூஜை; நன்மை & அமைதி.",
+        srv_archana_title:"சிறப்பு அர்ச்சனை / பூஜை",
+        srv_archana_desc:"தெய்வம் மற்றும் குடும்ப சங்கல்பத்திற்கான அர்ச்சனை.",
+        srv_naming_title:"பெயரிடல் / அன்னப்பிராசனம்",
+        srv_naming_desc:"குழந்தை நிகழ்ச்சிகளுக்கான பாரம்பரிய சடங்குகள்.",
+        srv_consult_title:"ஆலோசனை (முகூர்த்தம் / வழிகாட்டல்)",
+        srv_consult_desc:"தேதி, நடைமுறை, தயாரிப்பு வழிமுறை ஆலோசனை."
+      }
+    };
   </script>
 
   <header class="topbar">
@@ -505,11 +621,7 @@
         <span data-i18n="brand">Our Sampradhaya • Saravana</span>
       </div>
 
-      <!-- Nav toggle for small screens -->
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">☰</button>
-
-      <!-- Primary navigation; id used by toggle control -->
-      <nav id="primary-nav" class="nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a class="pill" href="#about" data-i18n="nav_about">About</a>
         <a class="pill" href="#services" data-i18n="nav_services">Services</a>
         <a class="pill" href="#book" data-i18n="nav_book">Book</a>
@@ -582,51 +694,352 @@
       </div>
     </section>
 
-    <!-- rest of page unchanged (about, services, book, contact, footer) -->
-    <!-- ... -->
+    <section id="about">
+      <div class="panel about">
+        <h2 class="section-title" data-i18n="about_title">About</h2>
+        <div class="about-flex">
+          <div>
+            <img id="saravanaPhoto" class="profile" alt="Saravana photo" />
+            <div class="profile-note" data-i18n="about_photo_note">Replace saravana.jpg with his real photo.</div>
+          </div>
+          <div>
+            <p id="aboutP1" style="margin:0;"></p>
+            <p style="margin:12px 0 0; color:var(--text-muted)" data-i18n="about_p2">
+              You can book a suitable time below, or message directly for special requests and preparation details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="panel services">
+        <h2 class="section-title" data-i18n="services_title">Services</h2>
+        <div class="grid3" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="panel book">
+        <h2 class="section-title" data-i18n="book_title">Book / Enquire</h2>
+        <div class="split">
+          <div class="box-card">
+            <h3 style="margin:0 0 8px; color:#2F2014; font-weight:950;" data-i18n="how_title">How booking works</h3>
+            <ol style="margin:0; padding-left:18px;">
+              <li data-i18n="how_1">Select a convenient date/time.</li>
+              <li data-i18n="how_2">Add notes (service type, location, preferred language).</li>
+              <li data-i18n="how_3">You’ll receive confirmation and next steps.</li>
+            </ol>
+
+            <div style="height:12px"></div>
+
+            <div class="contact-list">
+              <a class="contact-item" id="emailLink" href="#">
+                <div>✉️</div>
+                <div>
+                  <strong data-i18n="email_label">Email</strong>
+                  <span id="emailText"></span>
+                </div>
+              </a>
+
+              <a class="contact-item" id="waLink" href="#" target="_blank" rel="noopener noreferrer">
+                <div>💬</div>
+                <div>
+                  <strong data-i18n="wa_label">WhatsApp</strong>
+                  <span data-i18n="wa_sub">Fast enquiries & details</span>
+                </div>
+              </a>
+            </div>
+
+            <p style="margin:12px 0 0; color:var(--text-muted); font-size:13px" data-i18n="tip">
+              Tip: In your note, mention “Service + Date + Location + Any special request”.
+            </p>
+          </div>
+
+          <div class="cal-wrap">
+            <div class="calendly-inline-widget" id="calendlyInline" style="min-width:320px;height:740px;" data-url=""></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="panel contact">
+        <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+        <div class="split">
+          <div class="box-card">
+            <div class="contact-list">
+              <a class="contact-item" id="callLink" href="#">
+                <div>📞</div>
+                <div>
+                  <strong data-i18n="call_label">Call</strong>
+                  <span id="phoneText"></span>
+                </div>
+              </a>
+
+              <a class="contact-item" id="waLink2" href="#" target="_blank" rel="noopener noreferrer">
+                <div>💬</div>
+                <div>
+                  <strong data-i18n="wa_label">WhatsApp</strong>
+                  <span data-i18n="wa_sub">Fast enquiries & details</span>
+                </div>
+              </a>
+
+              <div class="contact-item">
+                <div>📍</div>
+                <div>
+                  <strong data-i18n="location_label">Location</strong>
+                  <span id="locationText"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-card">
+            <h3 style="margin:0 0 8px; color:#2F2014; font-weight:950;" data-i18n="template_title">Enquiry note template</h3>
+            <div id="templateBox" style="border:1px solid rgba(139,30,30,.16); border-radius:16px; padding:12px; background:rgba(255,255,255,.40);"></div>
+            <div style="height:12px"></div>
+            <button class="btn success" style="width:100%; cursor:pointer" id="copyMsgBtn" data-i18n="copy_btn">📋 Copy message</button>
+            <p style="margin:10px 0 0; color:var(--text-muted); font-size:13px" data-i18n="template_tip"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> <span data-i18n="site_name">Our Sampradhaya</span> • <span data-i18n="footer">All rights reserved</span>
+    </div>
   </main>
 
   <script>
-    // Note: the full page's JS was present earlier. Below add only the new nav toggle behavior
-    (function(){
-      const navToggle = document.querySelector('.nav-toggle');
-      const navEl = document.getElementById('primary-nav');
-      const NAV_BREAKPOINT = 860; // must match CSS media query
+    document.title = SITE_NAME + " | Saravana - Temple Priest Services";
 
-      if (navToggle && navEl) {
-        navToggle.addEventListener('click', () => {
-          const open = navEl.classList.toggle('open');
-          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    function escapeHtml(str){
+      return String(str).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+    }
+    function setActiveLangButtons(lang){
+      const btnEN = document.getElementById("btnEN");
+      const btnTA = document.getElementById("btnTA");
+      if (btnEN) btnEN.classList.toggle("active", lang === "en");
+      if (btnTA) btnTA.classList.toggle("active", lang === "ta");
+      document.documentElement.lang = (lang === "ta" ? "ta" : "en");
+    }
+    function t(lang, key){
+      return (I18N[lang] && I18N[lang][key]) ? I18N[lang][key] : (I18N.en[key] || "");
+    }
+
+    function renderServices(lang){
+      const grid = document.getElementById("servicesGrid");
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      SERVICES.forEach(s => {
+        const titleKey = s.key + "_title";
+        const descKey  = s.key + "_desc";
+
+        const card = document.createElement("div");
+        card.className = "service-card";
+        card.style.backgroundImage = `url("${makeBg(s.kind)}")`;
+
+        const tagsHtml = s.tags.map(tag => `<span class=\"tag\">${escapeHtml(tag)}</span>`).join("");
+
+        card.innerHTML = `
+          <div class="service-content">
+            <h3 class="service-title">${escapeHtml(t(lang, titleKey))}</h3>
+            <p class="service-desc">${escapeHtml(t(lang, descKey))}</p>
+            <div class="service-meta">
+              ${tagsHtml}
+              <span class="tag">⏱ ${escapeHtml(s.duration)}</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn primary" href="#book">${escapeHtml(t(lang, "book_btn_small"))}</a>
+              <a class="btn enquire-btn" href="#" data-service="${encodeURIComponent(t(lang, titleKey))}">${escapeHtml(t(lang, "enquire_btn"))}</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      const other = document.createElement("div");
+      other.className = "other-services";
+      other.innerHTML = `
+        <h3>${escapeHtml(t(lang, "other_title"))}</h3>
+        <p>${escapeHtml(t(lang, "other_desc"))}</p>
+        <div class="chips">
+          <span class="chip">${escapeHtml(t(lang, "other_chip1"))}</span>
+          <span class="chip">${escapeHtml(t(lang, "other_chip2"))}</span>
+          <span class="chip">${escapeHtml(t(lang, "other_chip3"))}</span>
+          <span class="chip">${escapeHtml(t(lang, "other_chip4"))}</span>
+          <span class="chip">${escapeHtml(t(lang, "other_chip5"))}</span>
+        </div>
+      `;
+      grid.appendChild(other);
+
+      bindEnquiryButtons();
+    }
+
+    // Sanitize WhatsApp number (keep digits only)
+    const waNumberSanitized = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
+    const waBase = "https://wa.me/" + waNumberSanitized;
+
+    function bindEnquiryButtons(){
+      document.querySelectorAll('.enquire-btn').forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const el = e.currentTarget;
+          const encoded = el.getAttribute("data-service") || "";
+          const service = decodeURIComponent(encoded);
+          const msg = `Vanakkam 🙏\nService: ${service}\nDate:\nLocation:\nNotes:\n`;
+          const waUrl = waBase + "?text=" + encodeURIComponent(msg);
+          // open in a new tab/window so we don't navigate away from the site
+          window.open(waUrl, "_blank", "noopener");
         });
+      });
+    }
 
-        // Close nav when a link inside it is clicked (improves UX on mobile)
-        navEl.querySelectorAll('a').forEach(a => {
-          a.addEventListener('click', () => {
-            if (navEl.classList.contains('open')) {
-              navEl.classList.remove('open');
-              navToggle.setAttribute('aria-expanded', 'false');
-            }
-          });
-        });
+    function applyLanguage(lang){
+      setActiveLangButtons(lang);
+      try { localStorage.setItem("site_lang", lang); } catch(e){/* ignore */ }
 
-        // Ensure menu is closed when resizing to large screens
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > NAV_BREAKPOINT && navEl.classList.contains('open')) {
-            navEl.classList.remove('open');
-            navToggle.setAttribute('aria-expanded', 'false');
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (key === "template_html") return;
+        el.textContent = t(lang, key);
+      });
+
+      const heroEl = document.getElementById("heroSubtitle");
+      if (heroEl) heroEl.innerHTML = t(lang, "hero_subtitle_html");
+
+      const citySpan = document.getElementById("templeCityInline");
+      if (citySpan) citySpan.textContent = TEMPLE_OR_CITY;
+
+      const aboutP1 = document.getElementById("aboutP1");
+      if (aboutP1) aboutP1.innerHTML = t(lang, "about_p1_html");
+
+      const templateBox = document.getElementById("templateBox");
+      if (templateBox) templateBox.innerHTML = t(lang, "template_html");
+
+      renderServices(lang);
+    }
+
+    // Static fields
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const phoneTextEl = document.getElementById("phoneText");
+    if (phoneTextEl) phoneTextEl.textContent = SARAVANA_PHONE;
+
+    const emailTextEl = document.getElementById("emailText");
+    if (emailTextEl) emailTextEl.textContent = SARAVANA_EMAIL;
+
+    const locationTextEl = document.getElementById("locationText");
+    if (locationTextEl) locationTextEl.textContent = TEMPLE_OR_CITY;
+
+    // Photo
+    const photoEl = document.getElementById("saravanaPhoto");
+    if (photoEl) {
+      photoEl.src = SARAVANA_PHOTO;
+      photoEl.onerror = () => {
+        photoEl.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='100%25' height='100%25' fill='%23FFF1D6'/><circle cx='120' cy='95' r='46' fill='%23E6C89A'/><rect x='55' y='145' width='130' height='70' rx='26' fill='%23D9B07E'/><text x='120' y='225' text-anchor='middle' font-family='Arial' font-size='16' fill='%236B4E2E'>Saravana</text></svg>";
+      };
+    }
+
+    // Links
+    const telHref = "tel:" + SARAVANA_PHONE.replace(/\s/g,"");
+    const callBtn = document.getElementById("callBtn");
+    const callLink = document.getElementById("callLink");
+    if (callBtn) callBtn.href = telHref;
+    if (callLink) callLink.href = telHref;
+
+    const mailHref =
+      "mailto:" + encodeURIComponent(SARAVANA_EMAIL) +
+      "?subject=" + encodeURIComponent("Puja / Ritual enquiry") +
+      "&body=" + encodeURIComponent("Vanakkam 🙏\nI would like to enquire about a puja/ritual.\nService:\nDate:\nLocation:\nNotes:\n");
+    const emailLink = document.getElementById("emailLink");
+    if (emailLink) {
+      emailLink.href = mailHref;
+      // leave mailto in same tab (user expectation)
+    }
+
+    const waText = encodeURIComponent("Vanakkam 🙏 I would like to enquire about a puja/ritual.\nService:\nDate:\nLocation:\nNotes:\n");
+    const waHref = waBase + "?text=" + waText;
+    const waBtnEl = document.getElementById("waBtn");
+    const waLinkEl = document.getElementById("waLink");
+    const waLink2El = document.getElementById("waLink2");
+    if (waBtnEl) {
+      waBtnEl.href = waHref;
+      waBtnEl.target = "_blank";
+      waBtnEl.rel = "noopener noreferrer";
+    }
+    if (waLinkEl) {
+      waLinkEl.href = waHref;
+      waLinkEl.target = "_blank";
+      waLinkEl.rel = "noopener noreferrer";
+    }
+    if (waLink2El) {
+      waLink2El.href = waHref;
+      waLink2El.target = "_blank";
+      waLink2El.rel = "noopener noreferrer";
+    }
+
+    // Calendly — set the data-url and initialise inline widget when Calendly is available.
+    const calInline = document.getElementById("calendlyInline");
+    if (calInline) {
+      calInline.setAttribute("data-url", CALENDLY_URL);
+
+      // If Calendly has already loaded, init inline widget. Otherwise poll for it briefly.
+      const initCalendlyInline = () => {
+        try {
+          if (window.Calendly && typeof window.Calendly.initInlineWidget === "function") {
+            // remove previous contents (if any) and init inline
+            calInline.innerHTML = "";
+            window.Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: calInline });
+            return true;
           }
-        });
+        } catch (err) { /* ignore */ }
+        return false;
+      };
 
-        // Optional: close the menu on Escape
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && navEl.classList.contains('open')) {
-            navEl.classList.remove('open');
-            navToggle.setAttribute('aria-expanded', 'false');
-            navToggle.focus();
-          }
-        });
+      if (!initCalendlyInline()) {
+        // poll for up to ~8s
+        const start = Date.now();
+        (function waitForCalendly(){
+          if (initCalendlyInline()) return;
+          if (Date.now() - start < 8000) setTimeout(waitForCalendly, 300);
+        })();
       }
-    })();
+    }
+
+    // Quick book
+    const quickBookBtn = document.getElementById("quickBookBtn");
+    if (quickBookBtn) {
+      quickBookBtn.addEventListener("click", () => {
+        if (!window.Calendly) {
+          alert("Calendly is still loading. Please try again in a moment or scroll to the booking section.");
+          return;
+        }
+        window.Calendly.initPopupWidget({ url: CALENDLY_URL });
+      });
+    }
+
+    // Copy message
+    const copyMsgBtn = document.getElementById("copyMsgBtn");
+    if (copyMsgBtn) {
+      copyMsgBtn.addEventListener("click", async () => {
+        const lang = (function(){ try{return localStorage.getItem("site_lang")||"en"; } catch(e){return "en";}})();
+        const text = (lang === "ta")
+          ? `வணக்கம் 🙏\nநான் [சேவை] ஐ [தேதி] அன்று [இடம்] இல் முன்பதிவு செய்ய விரும்புகிறேன்.\nமொழி: [தமிழ்/ஆங்கிலம்/தெலுங்கு].\nகுறிப்பு: [சிறப்பு வேண்டுகோள்].`
+          : `Vanakkam 🙏\nI would like to book [Service] on [Date] at [Location].\nPreferred language: [Tamil/English/Telugu].\nNotes: [Any special requirement].`;
+        try{ await navigator.clipboard.writeText(text); alert(lang==="ta" ? "நகலெடுக்கப்பட்டது!" : "Copied!"); }
+        catch{ alert(lang==="ta" ? "நகலெடுக்க முடியவில்லை." : "Copy failed."); }
+      });
+    }
+
+    // Language toggle
+    const btnEN = document.getElementById("btnEN");
+    const btnTA = document.getElementById("btnTA");
+    if (btnEN) btnEN.addEventListener("click", () => applyLanguage("en");)
   </script>
 </body>
 </html>
