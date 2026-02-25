@@ -351,16 +351,16 @@
         </div>
         <div class="flex items-baseline gap-2">
           <span class="font-serif text-lg sm:text-xl font-bold text-earth-900 leading-none">Saravana</span>
-          <span class="hidden sm:inline text-xs text-earth-600 tracking-wider uppercase">Vedic Divine Services</span>
+          <span id="brand-subtitle" class="hidden sm:inline text-xs text-earth-600 tracking-wider uppercase">Vedic Divine Services</span>
         </div>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
-        <a href="#services" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">Services</a>
-        <a href="#about" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">About</a>
-        <a href="#process" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">How it Works</a>
-        <a href="#contact" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">Contact</a>
+        <a id="nav-services" href="#services" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">Services</a>
+        <a id="nav-about" href="#about" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">About</a>
+        <a id="nav-process" href="#process" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">How it Works</a>
+        <a id="nav-contact" href="#contact" class="text-earth-700 hover:text-saffron-600 font-medium transition-colors">Contact</a>
 
         <!-- Language Toggle -->
         <div class="flex items-center bg-earth-100 rounded-full p-1">
@@ -368,7 +368,7 @@
           <button type="button" onclick="switchLanguage('ta')" class="lang-btn px-3 py-1 rounded-full text-sm font-medium text-earth-600" id="btn-ta" aria-pressed="false">தமிழ்</button>
         </div>
 
-        <a href="#book" class="bg-saffron-500 hover:bg-saffron-600 text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-saffron-500/30 btn-pulse">
+        <a id="nav-book" href="#book" class="bg-saffron-500 hover:bg-saffron-600 text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-saffron-500/30 btn-pulse">
           Book Now
         </a>
       </div>
@@ -389,26 +389,26 @@
   >
     <div class="p-6 pb-10">
       <div class="flex justify-between items-center mb-8">
-        <span class="font-serif text-xl font-bold text-earth-900">Menu</span>
+        <span id="mobile-menu-title" class="font-serif text-xl font-bold text-earth-900">Menu</span>
         <button type="button" onclick="toggleMobileMenu()" class="p-2 rounded-lg text-earth-700 hover:bg-earth-100" aria-label="Close menu">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
       <div class="space-y-4">
-        <a href="#services" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">Services</a>
-        <a href="#about" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">About</a>
-        <a href="#process" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">How it Works</a>
-        <a href="#contact" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">Contact</a>
+        <a id="mobile-nav-services" href="#services" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">Services</a>
+        <a id="mobile-nav-about" href="#about" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">About</a>
+        <a id="mobile-nav-process" href="#process" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">How it Works</a>
+        <a id="mobile-nav-contact" href="#contact" onclick="toggleMobileMenu()" class="block py-3 text-lg text-earth-700 hover:text-saffron-600 border-b border-earth-100">Contact</a>
 
         <div class="pt-4">
-          <p class="text-sm text-earth-500 mb-2">Select Language</p>
+          <p id="mobile-select-language" class="text-sm text-earth-500 mb-2">Select Language</p>
           <div class="flex space-x-3">
-            <button type="button" onclick="switchLanguage('en'); toggleMobileMenu()" class="flex-1 py-3 rounded-lg bg-saffron-500 text-white font-medium">English</button>
-            <button type="button" onclick="switchLanguage('ta'); toggleMobileMenu()" class="flex-1 py-3 rounded-lg bg-earth-200 text-earth-700 font-medium">தமிழ்</button>
+            <button id="mobile-lang-en" type="button" onclick="switchLanguage('en'); toggleMobileMenu()" class="flex-1 py-3 rounded-lg bg-saffron-500 text-white font-medium">English</button>
+            <button id="mobile-lang-ta" type="button" onclick="switchLanguage('ta'); toggleMobileMenu()" class="flex-1 py-3 rounded-lg bg-earth-200 text-earth-700 font-medium">தமிழ்</button>
           </div>
         </div>
 
-        <a href="#book" onclick="toggleMobileMenu()" class="block w-full py-4 mt-4 text-center bg-saffron-500 text-white rounded-xl font-semibold text-lg shadow-lg">
+        <a id="mobile-nav-book" href="#book" onclick="toggleMobileMenu()" class="block w-full py-4 mt-4 text-center bg-saffron-500 text-white rounded-xl font-semibold text-lg shadow-lg">
           Book a Service
         </a>
       </div>
@@ -466,7 +466,7 @@
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold text-saffron-600 uppercase tracking-wider">In-person</span>
+            <span class="service-mode text-xs font-semibold text-saffron-600 uppercase tracking-wider">In-person</span>
             <div class="flex items-center text-earth-500 text-sm">
               <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
               90-150 min
@@ -476,8 +476,8 @@
           <p class="text-earth-600 text-sm mb-4 service-desc">Auspicious rituals for new home entry, vastu blessings, and purification ceremonies to bring peace and prosperity.</p>
 
           <div class="flex items-center gap-2 mb-4 flex-wrap">
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Vastu Shanti</span>
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Ganapati Puja</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Vastu Shanti</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Ganapati Puja</span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -500,7 +500,7 @@
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">In-person</span>
+            <span class="service-mode text-xs font-semibold text-blue-600 uppercase tracking-wider">In-person</span>
             <div class="flex items-center text-earth-500 text-sm">
               <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
               60-120 min
@@ -510,8 +510,8 @@
           <p class="text-earth-600 text-sm mb-4 service-desc">Traditional puja for prosperity, wellbeing, and gratitude. Can be performed for special occasions or monthly observances.</p>
 
           <div class="flex items-center gap-2 mb-4 flex-wrap">
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Katha</span>
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Prasad</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Katha</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Prasad</span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -534,7 +534,7 @@
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">In-person</span>
+            <span class="service-mode text-xs font-semibold text-red-600 uppercase tracking-wider">In-person</span>
             <div class="flex items-center text-earth-500 text-sm">
               <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
               90-180 min
@@ -544,8 +544,8 @@
           <p class="text-earth-600 text-sm mb-4 service-desc">Sacred fire ritual with sankalpam for specific intentions including Ganapati Homam, Navagraha Homam, and Sudarshana Homam.</p>
 
           <div class="flex items-center gap-2 mb-4 flex-wrap">
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Fire Ritual</span>
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Mantras</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Fire Ritual</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Mantras</span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -568,7 +568,7 @@
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider">Temple</span>
+            <span class="service-mode text-xs font-semibold text-purple-600 uppercase tracking-wider">Temple</span>
             <div class="flex items-center text-earth-500 text-sm">
               <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
               15-30 min
@@ -578,8 +578,8 @@
           <p class="text-earth-600 text-sm mb-4 service-desc">Customized archana for deity and your family sankalpam at the temple. Includes abhishekam and deeparadhana.</p>
 
           <div class="flex items-center gap-2 mb-4 flex-wrap">
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Abhishekam</span>
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Archana</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Abhishekam</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Archana</span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -602,7 +602,7 @@
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">In-person</span>
+            <span class="service-mode text-xs font-semibold text-green-600 uppercase tracking-wider">In-person</span>
             <div class="flex items-center text-earth-500 text-sm">
               <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
               60-120 min
@@ -612,8 +612,8 @@
           <p class="text-earth-600 text-sm mb-4 service-desc">Sacred rituals for newborn milestones including Namkaran (naming ceremony) and first rice feeding (Annaprashana).</p>
 
           <div class="flex items-center gap-2 mb-4 flex-wrap">
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Namkaran</span>
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Annaprashan</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Namkaran</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Annaprashan</span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -636,7 +636,7 @@
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold text-teal-600 uppercase tracking-wider">Consultation</span>
+            <span class="service-mode text-xs font-semibold text-teal-600 uppercase tracking-wider">Consultation</span>
             <div class="flex items-center text-earth-500 text-sm">
               <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
               20-30 min
@@ -646,8 +646,8 @@
           <p class="text-earth-600 text-sm mb-4 service-desc">Expert consultation on auspicious dates (muhurtham), ritual procedures, preparation lists, and spiritual guidance.</p>
 
           <div class="flex items-center gap-2 mb-4 flex-wrap">
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Muhurtham</span>
-            <span class="px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Guidance</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Muhurtham</span>
+            <span class="service-tag px-3 py-1 bg-earth-100 text-earth-700 rounded-full text-xs">Guidance</span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -669,7 +669,7 @@
           <div class="flex-shrink-0 w-12 h-12 bg-saffron-100 rounded-full flex items-center justify-center text-saffron-600">
             <i data-lucide="sparkles" class="w-6 h-6"></i>
           </div>
-          <div class="flex-1">
+          <div id="other-services-content" class="flex-1">
             <p class="font-semibold text-earth-900 mb-1">Other Services Available</p>
             <p class="text-earth-600 text-sm">Daily puja support, festival special pujas, vastu/graha shanti, temple event support, and the following additional divine services:</p>
             <div class="mt-4 grid md:grid-cols-2 gap-4">
@@ -698,7 +698,7 @@
               </div>
             </div>
           </div>
-          <button type="button" onclick="openEnquiry('Custom Service')" class="w-full sm:w-auto px-4 py-2 text-saffron-600 font-medium hover:bg-saffron-100 rounded-lg transition-colors whitespace-nowrap">
+          <button id="other-services-ask-btn" type="button" onclick="openEnquiry('Custom Service')" class="w-full sm:w-auto px-4 py-2 text-saffron-600 font-medium hover:bg-saffron-100 rounded-lg transition-colors whitespace-nowrap">
             Ask Now
           </button>
         </div>
@@ -781,8 +781,8 @@
               <i data-lucide="map-pin" class="w-5 h-5"></i>
             </div>
             <div>
-              <h4 class="font-semibold text-earth-900">Based in Singapore</h4>
-              <p class="text-sm text-earth-600">Serving homes & temples</p>
+              <h4 id="about-feature-1-title" class="font-semibold text-earth-900">Based in Singapore</h4>
+              <p id="about-feature-1-desc" class="text-sm text-earth-600">Serving homes & temples</p>
             </div>
           </div>
           <div class="flex items-start">
@@ -790,8 +790,8 @@
               <i data-lucide="languages" class="w-5 h-5"></i>
             </div>
             <div>
-              <h4 class="font-semibold text-earth-900">Multilingual</h4>
-              <p class="text-sm text-earth-600">English, Tamil, Telugu</p>
+              <h4 id="about-feature-2-title" class="font-semibold text-earth-900">Multilingual</h4>
+              <p id="about-feature-2-desc" class="text-sm text-earth-600">English, Tamil, Telugu</p>
             </div>
           </div>
           <div class="flex items-start">
@@ -799,8 +799,8 @@
               <i data-lucide="book-open" class="w-5 h-5"></i>
             </div>
             <div>
-              <h4 class="font-semibold text-earth-900">Vedic Training</h4>
-              <p class="text-sm text-earth-600">Traditional Sampradaya</p>
+              <h4 id="about-feature-3-title" class="font-semibold text-earth-900">Vedic Training</h4>
+              <p id="about-feature-3-desc" class="text-sm text-earth-600">Traditional Sampradaya</p>
             </div>
           </div>
           <div class="flex items-start">
@@ -808,14 +808,14 @@
               <i data-lucide="heart-handshake" class="w-5 h-5"></i>
             </div>
             <div>
-              <h4 class="font-semibold text-earth-900">Personalized Care</h4>
-              <p class="text-sm text-earth-600">Clear explanations</p>
+              <h4 id="about-feature-4-title" class="font-semibold text-earth-900">Personalized Care</h4>
+              <p id="about-feature-4-desc" class="text-sm text-earth-600">Clear explanations</p>
             </div>
           </div>
         </div>
 
         <a href="#contact" class="inline-flex items-center text-saffron-600 font-semibold hover:text-saffron-700 transition-colors group">
-          Get in touch for custom requirements
+          <span id="about-cta-text">Get in touch for custom requirements</span>
           <i data-lucide="arrow-right" class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
         </a>
       </div>
@@ -827,9 +827,9 @@
 <section id="process" class="py-16 md:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-12 reveal">
-      <span class="text-saffron-600 font-semibold tracking-wider uppercase text-sm">Simple Process</span>
-      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-earth-900 mt-3 mb-4">How to Book a Divine Service</h2>
-      <p class="text-earth-600 text-lg">Easy steps to arrange your Hindu ceremony with complete guidance on preparation.</p>
+      <span id="process-subtitle" class="text-saffron-600 font-semibold tracking-wider uppercase text-sm">Simple Process</span>
+      <h2 id="process-title" class="font-serif text-4xl lg:text-5xl font-bold text-earth-900 mt-3 mb-4">How to Book a Divine Service</h2>
+      <p id="process-desc" class="text-earth-600 text-lg">Easy steps to arrange your Hindu ceremony with complete guidance on preparation.</p>
     </div>
 
     <div class="grid md:grid-cols-4 gap-6 relative">
@@ -842,8 +842,8 @@
           <span class="text-3xl font-serif font-bold text-saffron-500">1</span>
         </div>
         <div class="text-center">
-          <h3 class="font-serif text-xl font-bold text-earth-900 mb-2">Choose Service</h3>
-          <p class="text-earth-600 text-sm">Select from our list of rituals or enquire about custom ceremonies.</p>
+          <h3 id="process-step1-title" class="font-serif text-xl font-bold text-earth-900 mb-2">Choose Service</h3>
+          <p id="process-step1-desc" class="text-earth-600 text-sm">Select from our list of rituals or enquire about custom ceremonies.</p>
         </div>
       </div>
 
@@ -853,8 +853,8 @@
           <span class="text-3xl font-serif font-bold text-saffron-500">2</span>
         </div>
         <div class="text-center">
-          <h3 class="font-serif text-xl font-bold text-earth-900 mb-2">Pick Date</h3>
-          <p class="text-earth-600 text-sm">Book online or via WhatsApp. We'll confirm availability instantly.</p>
+          <h3 id="process-step2-title" class="font-serif text-xl font-bold text-earth-900 mb-2">Pick Date</h3>
+          <p id="process-step2-desc" class="text-earth-600 text-sm">Book online or via WhatsApp. We'll confirm availability instantly.</p>
         </div>
       </div>
 
@@ -864,8 +864,8 @@
           <span class="text-3xl font-serif font-bold text-saffron-500">3</span>
         </div>
         <div class="text-center">
-          <h3 class="font-serif text-xl font-bold text-earth-900 mb-2">Get Ready</h3>
-          <p class="text-earth-600 text-sm">Receive detailed materials list (samagri) and preparation guidelines.</p>
+          <h3 id="process-step3-title" class="font-serif text-xl font-bold text-earth-900 mb-2">Get Ready</h3>
+          <p id="process-step3-desc" class="text-earth-600 text-sm">Receive detailed materials list (samagri) and preparation guidelines.</p>
         </div>
       </div>
 
@@ -875,24 +875,24 @@
           <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
         </div>
         <div class="text-center">
-          <h3 class="font-serif text-xl font-bold text-earth-900 mb-2">Blessed Ceremony</h3>
-          <p class="text-earth-600 text-sm">Experience an authentic ritual performed with devotion and care.</p>
+          <h3 id="process-step4-title" class="font-serif text-xl font-bold text-earth-900 mb-2">Blessed Ceremony</h3>
+          <p id="process-step4-desc" class="text-earth-600 text-sm">Experience an authentic ritual performed with devotion and care.</p>
         </div>
       </div>
     </div>
 
     <!-- Quick Book CTA -->
     <div class="mt-14 bg-gradient-to-r from-saffron-500 to-saffron-600 rounded-3xl p-6 md:p-10 text-center text-white shadow-xl reveal">
-      <h3 class="font-serif text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Ceremony?</h3>
-      <p class="text-saffron-100 mb-8 max-w-2xl mx-auto text-lg">Whether you're moving into a new home or seeking blessings for a special occasion, we're here to guide you through every step.</p>
+      <h3 id="process-cta-title" class="font-serif text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Ceremony?</h3>
+      <p id="process-cta-desc" class="text-saffron-100 mb-8 max-w-2xl mx-auto text-lg">Whether you're moving into a new home or seeking blessings for a special occasion, we're here to guide you through every step.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-white text-saffron-600 rounded-full font-semibold hover:bg-saffron-50 transition-all transform hover:scale-105 shadow-lg">
           <i data-lucide="calendar" class="mr-2 w-5 h-5"></i>
-          Check Availability
+          <span id="process-cta-btn-1">Check Availability</span>
         </a>
         <a href="https://wa.me/6590000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-saffron-700 text-white border-2 border-saffron-400 rounded-full font-semibold hover:bg-saffron-800 transition-all">
           <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
-          Quick WhatsApp
+          <span id="process-cta-btn-2">Quick WhatsApp</span>
         </a>
       </div>
     </div>
@@ -905,9 +905,9 @@
     <div id="contact" class="relative -top-24" aria-hidden="true"></div>
 
     <div class="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left mb-8 reveal">
-      <span class="text-saffron-600 font-semibold tracking-wider uppercase text-sm">Contact</span>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-earth-900 mt-3 mb-4">Contact for Divine Services in Singapore</h2>
-      <p class="text-earth-600 text-base sm:text-lg">Reach out via WhatsApp or phone call for service availability, puja requirements, samagri list, and preparation guidance.</p>
+      <span id="contact-subtitle" class="text-saffron-600 font-semibold tracking-wider uppercase text-sm">Contact</span>
+      <h2 id="contact-title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-earth-900 mt-3 mb-4">Contact for Divine Services in Singapore</h2>
+      <p id="contact-desc" class="text-earth-600 text-base sm:text-lg">Reach out via WhatsApp or phone call for service availability, puja requirements, samagri list, and preparation guidance.</p>
     </div>
 
     <div id="contact-primary-cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
@@ -916,8 +916,8 @@
           <i data-lucide="message-circle" class="w-7 h-7"></i>
         </div>
         <div class="flex-1">
-          <h3 class="font-semibold text-earth-900 text-lg">WhatsApp</h3>
-          <p class="text-earth-600">Fastest enquiry and updates</p>
+          <h3 id="contact-card1-title" class="font-semibold text-earth-900 text-lg">WhatsApp</h3>
+          <p id="contact-card1-desc" class="text-earth-600">Fastest enquiry and updates</p>
         </div>
         <i data-lucide="external-link" class="w-5 h-5 text-earth-400 group-hover:text-green-500"></i>
       </a>
@@ -927,7 +927,7 @@
           <i data-lucide="phone" class="w-7 h-7"></i>
         </div>
         <div class="flex-1">
-          <h3 class="font-semibold text-earth-900 text-lg">Call Direct</h3>
+          <h3 id="contact-card2-title" class="font-semibold text-earth-900 text-lg">Call Direct</h3>
           <p class="text-earth-600">+65 9000 0000</p>
         </div>
         <i data-lucide="chevron-right" class="w-5 h-5 text-earth-400 group-hover:text-saffron-500"></i>
@@ -938,15 +938,15 @@
           <i data-lucide="map-pin" class="w-7 h-7"></i>
         </div>
         <div>
-          <h3 class="font-semibold text-earth-900 text-lg">Location</h3>
-          <p class="text-earth-600">Singapore (Island-wide service)</p>
+          <h3 id="contact-card3-title" class="font-semibold text-earth-900 text-lg">Location</h3>
+          <p id="contact-card3-desc" class="text-earth-600">Singapore (Island-wide service)</p>
         </div>
       </div>
     </div>
 
     <div id="contact-secondary-cards" class="grid lg:grid-cols-2 gap-5">
       <div class="contact-secondary-card reveal p-5 bg-saffron-50 rounded-2xl border border-saffron-200">
-        <h4 class="font-semibold text-earth-900 mb-3 flex items-center">
+        <h4 id="contact-template-title" class="font-semibold text-earth-900 mb-3 flex items-center">
           <i data-lucide="clipboard" class="w-5 h-5 mr-2 text-saffron-600"></i>
           Quick Enquiry Template
         </h4>
@@ -954,30 +954,32 @@
           <button type="button" onclick="copyTemplate()" class="absolute top-2 right-2 p-2 hover:bg-earth-100 rounded text-saffron-600" title="Copy" aria-label="Copy enquiry template">
             <i data-lucide="copy" class="w-4 h-4"></i>
           </button>
-          Vanakkam 🙏<br><br>
-          I would like to book [Service] on [Date] at [Location].<br>
-          Preferred language: [Tamil/English/Telugu].<br>
-          Notes: [Any special requirements]
+          <span id="contact-template-body">
+            Vanakkam 🙏<br><br>
+            I would like to book [Service] on [Date] at [Location].<br>
+            Preferred language: [Tamil/English/Telugu].<br>
+            Notes: [Any special requirements]
+          </span>
         </div>
-        <p class="text-xs text-earth-600">Copy this template and send it in WhatsApp.</p>
+        <p id="contact-template-hint" class="text-xs text-earth-600">Copy this template and send it in WhatsApp.</p>
       </div>
 
       <div class="contact-secondary-card reveal bg-white p-5 rounded-2xl border border-earth-200 shadow-sm">
-        <h3 class="font-serif text-2xl font-bold text-earth-900 mb-3">Need a Custom Requirement?</h3>
-        <p class="text-earth-600 mb-5">For special pujas and family ceremonies, share your preferred date, location, and language. We will guide you with the exact next steps.</p>
+        <h3 id="contact-custom-title" class="font-serif text-2xl font-bold text-earth-900 mb-3">Need a Custom Requirement?</h3>
+        <p id="contact-custom-desc" class="text-earth-600 mb-5">For special pujas and family ceremonies, share your preferred date, location, and language. We will guide you with the exact next steps.</p>
         <ul class="space-y-2 text-earth-700 mb-6">
-          <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-600 mr-2 mt-0.5 flex-shrink-0"></i><span>Service confirmation and availability</span></li>
-          <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-600 mr-2 mt-0.5 flex-shrink-0"></i><span>Puja materials (samagri) checklist</span></li>
-          <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-600 mr-2 mt-0.5 flex-shrink-0"></i><span>Clear preparation guidance for family</span></li>
+          <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-600 mr-2 mt-0.5 flex-shrink-0"></i><span id="contact-custom-point1">Service confirmation and availability</span></li>
+          <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-600 mr-2 mt-0.5 flex-shrink-0"></i><span id="contact-custom-point2">Puja materials (samagri) checklist</span></li>
+          <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-600 mr-2 mt-0.5 flex-shrink-0"></i><span id="contact-custom-point3">Clear preparation guidance for family</span></li>
         </ul>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="https://wa.me/6590000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-medium transition-colors">
             <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
-            Send WhatsApp Enquiry
+            <span id="contact-custom-btn1">Send WhatsApp Enquiry</span>
           </a>
           <a href="tel:+6590000000" class="inline-flex items-center justify-center px-5 py-3 border border-earth-300 hover:border-saffron-400 text-earth-700 rounded-xl font-medium transition-colors">
             <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
-            Call +65 9000 0000
+            <span id="contact-custom-btn2">Call +65 9000 0000</span>
           </a>
         </div>
       </div>
@@ -989,30 +991,30 @@
 <section id="faq" class="py-16 md:py-20 bg-white">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-10 reveal">
-      <span class="text-saffron-600 font-semibold tracking-wider uppercase text-sm">FAQ</span>
-      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-earth-900 mt-3 mb-4">Frequently Asked Questions</h2>
-      <p class="text-earth-600 text-lg">Common questions about booking Hindu divine services in Singapore.</p>
+      <span id="faq-subtitle" class="text-saffron-600 font-semibold tracking-wider uppercase text-sm">FAQ</span>
+      <h2 id="faq-title" class="font-serif text-4xl lg:text-5xl font-bold text-earth-900 mt-3 mb-4">Frequently Asked Questions</h2>
+      <p id="faq-desc" class="text-earth-600 text-lg">Common questions about booking Hindu divine services in Singapore.</p>
     </div>
 
     <div class="space-y-5">
       <article class="bg-earth-50 border border-earth-200 rounded-2xl p-5 reveal">
-        <h3 class="font-serif text-2xl text-earth-900 font-bold mb-2">Which divine services are available?</h3>
-        <p class="text-earth-600">Saravana offers House Warming (Griha Pravesh), Satyanarayana Puja, Homam/Havan, Archana, Naming and Annaprashana ceremonies, Muhurtham guidance, Ganapathy Homam, Sudharshanam Homam, Mahamruthyunjaya Homam, Aayushya Homam, Mahalakshmi Homam, Navagraha Homam, Jataga Parihara Homam, Kala Sarpa Santhi, 60th/70th/80th ceremonies, Punnya Vachanam, and guidance on good days for engagement, marriage, and other occasions.</p>
+        <h3 id="faq-q1" class="font-serif text-2xl text-earth-900 font-bold mb-2">Which divine services are available?</h3>
+        <p id="faq-a1" class="text-earth-600">Saravana offers House Warming (Griha Pravesh), Satyanarayana Puja, Homam/Havan, Archana, Naming and Annaprashana ceremonies, Muhurtham guidance, Ganapathy Homam, Sudharshanam Homam, Mahamruthyunjaya Homam, Aayushya Homam, Mahalakshmi Homam, Navagraha Homam, Jataga Parihara Homam, Kala Sarpa Santhi, 60th/70th/80th ceremonies, Punnya Vachanam, and guidance on good days for engagement, marriage, and other occasions.</p>
       </article>
 
       <article class="bg-earth-50 border border-earth-200 rounded-2xl p-5 reveal delay-100">
-        <h3 class="font-serif text-2xl text-earth-900 font-bold mb-2">Can ceremonies be performed at home?</h3>
-        <p class="text-earth-600">Yes. Most services can be performed at your home anywhere in Singapore. Temple and online guidance options are also available where suitable.</p>
+        <h3 id="faq-q2" class="font-serif text-2xl text-earth-900 font-bold mb-2">Can ceremonies be performed at home?</h3>
+        <p id="faq-a2" class="text-earth-600">Yes. Most services can be performed at your home anywhere in Singapore. Temple and online guidance options are also available where suitable.</p>
       </article>
 
       <article class="bg-earth-50 border border-earth-200 rounded-2xl p-5 reveal delay-200">
-        <h3 class="font-serif text-2xl text-earth-900 font-bold mb-2">What languages are supported?</h3>
-        <p class="text-earth-600">Ceremonies and guidance are available in English, Tamil, and Telugu, with clear explanations for families and elders.</p>
+        <h3 id="faq-q3" class="font-serif text-2xl text-earth-900 font-bold mb-2">What languages are supported?</h3>
+        <p id="faq-a3" class="text-earth-600">Ceremonies and guidance are available in English, Tamil, and Telugu, with clear explanations for families and elders.</p>
       </article>
 
       <article class="bg-earth-50 border border-earth-200 rounded-2xl p-5 reveal delay-300">
-        <h3 class="font-serif text-2xl text-earth-900 font-bold mb-2">How early should I book?</h3>
-        <p class="text-earth-600">For better availability, book one to two weeks in advance. For weekends, festival dates, or complex homam ceremonies, earlier booking is recommended.</p>
+        <h3 id="faq-q4" class="font-serif text-2xl text-earth-900 font-bold mb-2">How early should I book?</h3>
+        <p id="faq-a4" class="text-earth-600">For better availability, book one to two weeks in advance. For weekends, festival dates, or complex homam ceremonies, earlier booking is recommended.</p>
       </article>
     </div>
   </div>
@@ -1030,10 +1032,10 @@
           <div class="w-10 h-10 rounded-full bg-saffron-500 flex items-center justify-center text-white font-serif text-xl">ॐ</div>
           <div>
             <span class="font-serif text-xl font-bold text-white">Saravana</span>
-            <p class="text-xs text-earth-400">Vedic Divine Services</p>
+            <p id="footer-brand-subtitle" class="text-xs text-earth-400">Vedic Divine Services</p>
           </div>
         </div>
-        <p class="text-earth-400 text-sm max-w-sm mb-4">
+        <p id="footer-desc" class="text-earth-400 text-sm max-w-sm mb-4">
           Trusted Hindu divine services in Singapore for puja, homam, house warming,
           and family ceremonies with authentic Vedic traditions.
         </p>
@@ -1048,29 +1050,29 @@
       </div>
 
       <div>
-        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <h4 id="footer-links-title" class="text-white font-semibold mb-4">Quick Links</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="#services" class="hover:text-saffron-400 transition-colors">Services</a></li>
-          <li><a href="#about" class="hover:text-saffron-400 transition-colors">About</a></li>
-          <li><a href="#process" class="hover:text-saffron-400 transition-colors">How it Works</a></li>
-          <li><a href="#contact" class="hover:text-saffron-400 transition-colors">Contact</a></li>
-          <li><a href="#faq" class="hover:text-saffron-400 transition-colors">FAQ</a></li>
+          <li><a id="footer-link-services" href="#services" class="hover:text-saffron-400 transition-colors">Services</a></li>
+          <li><a id="footer-link-about" href="#about" class="hover:text-saffron-400 transition-colors">About</a></li>
+          <li><a id="footer-link-process" href="#process" class="hover:text-saffron-400 transition-colors">How it Works</a></li>
+          <li><a id="footer-link-contact" href="#contact" class="hover:text-saffron-400 transition-colors">Contact</a></li>
+          <li><a id="footer-link-faq" href="#faq" class="hover:text-saffron-400 transition-colors">FAQ</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <h4 id="footer-contact-title" class="text-white font-semibold mb-4">Contact</h4>
         <ul class="space-y-2 text-sm">
           <li class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2 text-saffron-500"></i> +65 9000 0000</li>
           <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-saffron-500"></i> Singapore</li>
-          <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-saffron-500"></i> By Appointment</li>
+          <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-saffron-500"></i><span id="footer-appointment-text">By Appointment</span></li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-earth-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-earth-500 text-sm">&copy; 2026 Saravana Divine Services. All rights reserved.</p>
-      <p class="text-earth-600 text-xs mt-2 md:mt-0">ॐ Sarve Bhavantu Sukhinah (May all be happy)</p>
+      <p id="footer-copyright" class="text-earth-500 text-sm">&copy; 2026 Saravana Divine Services. All rights reserved.</p>
+      <p id="footer-motto" class="text-earth-600 text-xs mt-2 md:mt-0">ॐ Sarve Bhavantu Sukhinah (May all be happy)</p>
     </div>
   </div>
 </footer>
@@ -1089,19 +1091,19 @@
 
       <div class="space-y-4">
         <div class="p-4 bg-saffron-50 rounded-xl border border-saffron-100">
-          <p class="text-sm text-earth-600 mb-2">You're booking:</p>
+          <p id="modal-booking-label" class="text-sm text-earth-600 mb-2">You're booking:</p>
           <p class="font-semibold text-earth-900 text-lg" id="modal-service-name">Service Name</p>
         </div>
 
-        <p class="text-earth-600 text-sm">Choose your preferred booking method:</p>
+        <p id="modal-method-label" class="text-earth-600 text-sm">Choose your preferred booking method:</p>
 
         <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 border-2 border-earth-200 rounded-xl hover:border-saffron-400 hover:bg-saffron-50 transition-all group">
           <div class="w-12 h-12 bg-saffron-100 rounded-full flex items-center justify-center text-saffron-600 mr-4">
             <i data-lucide="calendar" class="w-6 h-6"></i>
           </div>
           <div class="flex-1">
-            <h4 class="font-semibold text-earth-900">Online Calendar</h4>
-            <p class="text-sm text-earth-600">See real-time availability</p>
+            <h4 id="modal-calendar-title" class="font-semibold text-earth-900">Online Calendar</h4>
+            <p id="modal-calendar-desc" class="text-sm text-earth-600">See real-time availability</p>
           </div>
           <i data-lucide="external-link" class="w-5 h-5 text-earth-400 group-hover:text-saffron-500"></i>
         </a>
@@ -1111,13 +1113,13 @@
             <i data-lucide="message-circle" class="w-6 h-6"></i>
           </div>
           <div class="flex-1">
-            <h4 class="font-semibold text-earth-900">WhatsApp Direct</h4>
-            <p class="text-sm text-earth-600">Quick message to confirm</p>
+            <h4 id="modal-whatsapp-title" class="font-semibold text-earth-900">WhatsApp Direct</h4>
+            <p id="modal-whatsapp-desc" class="text-sm text-earth-600">Quick message to confirm</p>
           </div>
           <i data-lucide="external-link" class="w-5 h-5 text-earth-400 group-hover:text-green-500"></i>
         </a>
 
-        <a href="#book" onclick="closeBookingModal()" class="block w-full py-3 text-center text-saffron-600 font-medium hover:bg-saffron-50 rounded-xl transition-colors">
+        <a id="modal-contact-options" href="#book" onclick="closeBookingModal()" class="block w-full py-3 text-center text-saffron-600 font-medium hover:bg-saffron-50 rounded-xl transition-colors">
           View Contact Options
         </a>
       </div>
@@ -1143,46 +1145,384 @@
   // Translations
   const translations = {
     en: {
-      'hero-badge': 'Trusted Hindu Priest | 40+ Years',
+      'brand-subtitle': 'Vedic Divine Services',
+      'nav-services': 'Services',
+      'nav-about': 'About',
+      'nav-process': 'How it Works',
+      'nav-contact': 'Contact',
+      'nav-book': 'Book Now',
+      'mobile-menu-title': 'Menu',
+      'mobile-nav-services': 'Services',
+      'mobile-nav-about': 'About',
+      'mobile-nav-process': 'How it Works',
+      'mobile-nav-contact': 'Contact',
+      'mobile-select-language': 'Select Language',
+      'mobile-lang-en': 'English',
+      'mobile-lang-ta': 'தமிழ்',
+      'mobile-nav-book': 'Book a Service',
       'hero-title-1': 'Vedic Divine Services',
       'hero-title-2': 'for Singapore Families',
       'hero-desc': 'Book authentic Hindu rituals, pujas, and homams with Saravana, an experienced temple priest serving homes and temples across Singapore with traditional Vedic procedures and clear guidance for every family.',
-      'btn-book': 'Book a Ceremony',
-      'btn-whatsapp': 'WhatsApp Enquiry',
-      'feat-1': 'Puja, Homam & Havan',
-      'feat-2': 'EN / Tamil / Telugu',
-      'feat-3': 'Home, Temple & Online',
       'services-subtitle': 'Divine Services',
       'services-title': 'Hindu Pooja, Homam & Ceremony Services',
       'services-desc': 'From house warming (Griha Pravesh) and Satyanarayana Puja to Homam, Archana, naming ceremonies, and muhurtham guidance, receive authentic Vedic rituals in your home, temple, or online.',
       'about-subtitle': 'About Saravana',
-      'about-title': 'Trusted Hindu Priest With 40+ Years of Experience',
+      'about-title': 'Trusted Hindu Priest With <span class="text-gradient">40+ Years of Experience</span>',
       'about-content': `
                     <p>Saravana is a dedicated Hindu temple priest with around 40 years of experience performing Vedic rituals and guiding families through traditional samskaras. His journey began in the ancient temples of South India, where he trained in rigorous Vedic discipline.</p>
                     <p>For the past several years, he has served the Hindu community in Singapore, offering authentic puja, homam, and pooja procedures with the same devotion practiced in India. He makes complex rituals accessible while preserving spiritual integrity.</p>
                     <p>Whether you need a simple archana at the temple, a house warming ceremony, or an elaborate homam at your new home, Saravana brings patience, clarity, and genuine care to every ceremony.</p>
-                `
+                `,
+      'about-feature-1-title': 'Based in Singapore',
+      'about-feature-1-desc': 'Serving homes & temples',
+      'about-feature-2-title': 'Multilingual',
+      'about-feature-2-desc': 'English, Tamil, Telugu',
+      'about-feature-3-title': 'Vedic Training',
+      'about-feature-3-desc': 'Traditional Sampradaya',
+      'about-feature-4-title': 'Personalized Care',
+      'about-feature-4-desc': 'Clear explanations',
+      'about-cta-text': 'Get in touch for custom requirements',
+      'process-subtitle': 'Simple Process',
+      'process-title': 'How to Book a Divine Service',
+      'process-desc': 'Easy steps to arrange your Hindu ceremony with complete guidance on preparation.',
+      'process-step1-title': 'Choose Service',
+      'process-step1-desc': 'Select from our list of rituals or enquire about custom ceremonies.',
+      'process-step2-title': 'Pick Date',
+      'process-step2-desc': 'Book online or via WhatsApp. We\'ll confirm availability instantly.',
+      'process-step3-title': 'Get Ready',
+      'process-step3-desc': 'Receive detailed materials list (samagri) and preparation guidelines.',
+      'process-step4-title': 'Blessed Ceremony',
+      'process-step4-desc': 'Experience an authentic ritual performed with devotion and care.',
+      'process-cta-title': 'Ready to Book Your Ceremony?',
+      'process-cta-desc': 'Whether you\'re moving into a new home or seeking blessings for a special occasion, we\'re here to guide you through every step.',
+      'process-cta-btn-1': 'Check Availability',
+      'process-cta-btn-2': 'Quick WhatsApp',
+      'other-services-content': `
+            <p class="font-semibold text-earth-900 mb-1">Other Services Available</p>
+            <p class="text-earth-600 text-sm">Daily puja support, festival special pujas, vastu/graha shanti, temple event support, and the following additional divine services:</p>
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div class="bg-white/80 rounded-xl border border-earth-200 p-4">
+                <p class="text-xs font-semibold text-saffron-600 uppercase tracking-wider mb-2">Homam Services</p>
+                <ul class="space-y-1 text-sm text-earth-700">
+                  <li>Ganapathy Homam</li>
+                  <li>Sudharshanam Homam</li>
+                  <li>Mahamruthyunjaya Homam</li>
+                  <li>Aayushya Homam</li>
+                  <li>Mahalakshmi (Magalakshmi) Homam</li>
+                  <li>Navagraha Homam</li>
+                  <li>Jataga Parihara Homam</li>
+                  <li>Kala Sarpa Santhi</li>
+                </ul>
+              </div>
+              <div class="bg-white/80 rounded-xl border border-earth-200 p-4">
+                <p class="text-xs font-semibold text-saffron-600 uppercase tracking-wider mb-2">Ceremonies & Guidance</p>
+                <ul class="space-y-1 text-sm text-earth-700">
+                  <li>60th / 70th / 80th Ceremony</li>
+                  <li>Punnya Vachanam</li>
+                  <li>Advice on good days for engagement</li>
+                  <li>Advice on good days for marriage</li>
+                  <li>Advice on good days for other occasions</li>
+                </ul>
+              </div>
+            </div>
+      `,
+      'other-services-ask-btn': 'Ask Now',
+      'contact-subtitle': 'Contact',
+      'contact-title': 'Contact for Divine Services in Singapore',
+      'contact-desc': 'Reach out via WhatsApp or phone call for service availability, puja requirements, samagri list, and preparation guidance.',
+      'contact-card1-title': 'WhatsApp',
+      'contact-card1-desc': 'Fastest enquiry and updates',
+      'contact-card2-title': 'Call Direct',
+      'contact-card3-title': 'Location',
+      'contact-card3-desc': 'Singapore (Island-wide service)',
+      'contact-template-title': 'Quick Enquiry Template',
+      'contact-template-body': 'Vanakkam 🙏<br><br>I would like to book [Service] on [Date] at [Location].<br>Preferred language: [Tamil/English/Telugu].<br>Notes: [Any special requirements]',
+      'contact-template-hint': 'Copy this template and send it in WhatsApp.',
+      'contact-custom-title': 'Need a Custom Requirement?',
+      'contact-custom-desc': 'For special pujas and family ceremonies, share your preferred date, location, and language. We will guide you with the exact next steps.',
+      'contact-custom-point1': 'Service confirmation and availability',
+      'contact-custom-point2': 'Puja materials (samagri) checklist',
+      'contact-custom-point3': 'Clear preparation guidance for family',
+      'contact-custom-btn1': 'Send WhatsApp Enquiry',
+      'contact-custom-btn2': 'Call +65 9000 0000',
+      'faq-subtitle': 'FAQ',
+      'faq-title': 'Frequently Asked Questions',
+      'faq-desc': 'Common questions about booking Hindu divine services in Singapore.',
+      'faq-q1': 'Which divine services are available?',
+      'faq-a1': 'Saravana offers House Warming (Griha Pravesh), Satyanarayana Puja, Homam/Havan, Archana, Naming and Annaprashana ceremonies, Muhurtham guidance, Ganapathy Homam, Sudharshanam Homam, Mahamruthyunjaya Homam, Aayushya Homam, Mahalakshmi Homam, Navagraha Homam, Jataga Parihara Homam, Kala Sarpa Santhi, 60th/70th/80th ceremonies, Punnya Vachanam, and guidance on good days for engagement, marriage, and other occasions.',
+      'faq-q2': 'Can ceremonies be performed at home?',
+      'faq-a2': 'Yes. Most services can be performed at your home anywhere in Singapore. Temple and online guidance options are also available where suitable.',
+      'faq-q3': 'What languages are supported?',
+      'faq-a3': 'Ceremonies and guidance are available in English, Tamil, and Telugu, with clear explanations for families and elders.',
+      'faq-q4': 'How early should I book?',
+      'faq-a4': 'For better availability, book one to two weeks in advance. For weekends, festival dates, or complex homam ceremonies, earlier booking is recommended.',
+      'footer-brand-subtitle': 'Vedic Divine Services',
+      'footer-desc': 'Trusted Hindu divine services in Singapore for puja, homam, house warming, and family ceremonies with authentic Vedic traditions.',
+      'footer-links-title': 'Quick Links',
+      'footer-link-services': 'Services',
+      'footer-link-about': 'About',
+      'footer-link-process': 'How it Works',
+      'footer-link-contact': 'Contact',
+      'footer-link-faq': 'FAQ',
+      'footer-contact-title': 'Contact',
+      'footer-appointment-text': 'By Appointment',
+      'footer-copyright': '© 2026 Saravana Divine Services. All rights reserved.',
+      'footer-motto': 'ॐ Sarve Bhavantu Sukhinah (May all be happy)',
+      'modal-title': 'Book Service',
+      'modal-booking-label': 'You\'re booking:',
+      'modal-method-label': 'Choose your preferred booking method:',
+      'modal-calendar-title': 'Online Calendar',
+      'modal-calendar-desc': 'See real-time availability',
+      'modal-whatsapp-title': 'WhatsApp Direct',
+      'modal-whatsapp-desc': 'Quick message to confirm',
+      'modal-contact-options': 'View Contact Options',
+      'toast-message': 'Message sent!',
+      'servicePopular': 'Popular',
+      'serviceBookLabel': 'Book',
+      'serviceEnquireLabel': 'Enquire',
+      'serviceModes': ['In-person', 'In-person', 'In-person', 'Temple', 'In-person', 'Consultation'],
+      'serviceTitles': [
+        'House Warming (Griha Pravesh)',
+        'Satyanarayana Puja',
+        'Homam / Havan',
+        'Archana / Special Pooja',
+        'Naming & Annaprashana',
+        'Muhurtham & Guidance'
+      ],
+      'serviceDescs': [
+        'Auspicious rituals for new home entry, vastu blessings, and purification ceremonies to bring peace and prosperity.',
+        'Traditional puja for prosperity, wellbeing, and gratitude. Can be performed for special occasions or monthly observances.',
+        'Sacred fire ritual with sankalpam for specific intentions including Ganapati Homam, Navagraha Homam, and Sudarshana Homam.',
+        'Customized archana for deity and your family sankalpam at the temple. Includes abhishekam and deeparadhana.',
+        'Sacred rituals for newborn milestones including Namkaran (naming ceremony) and first rice feeding (Annaprashana).',
+        'Expert consultation on auspicious dates (muhurtham), ritual procedures, preparation lists, and spiritual guidance.'
+      ],
+      'serviceTags': [
+        'Vastu Shanti',
+        'Ganapati Puja',
+        'Katha',
+        'Prasad',
+        'Fire Ritual',
+        'Mantras',
+        'Abhishekam',
+        'Archana',
+        'Namkaran',
+        'Annaprashan',
+        'Muhurtham',
+        'Guidance'
+      ],
+      'serviceNameMap': {
+        'House Warming': 'House Warming',
+        'Satyanarayana Puja': 'Satyanarayana Puja',
+        'Homam': 'Homam',
+        'Archana': 'Archana',
+        'Naming Ceremony': 'Naming Ceremony',
+        'Consultation': 'Consultation',
+        'Custom Service': 'Custom Service'
+      },
+      'copyTemplateText': `Vanakkam 🙏
+
+I would like to book [Service] on [Date] at [Location].
+Preferred language: [Tamil/English/Telugu].
+Notes: [Any special requirements]`,
+      'enquiryMessageTemplate': `Vanakkam 🙏
+
+I would like to enquire about {{service}}.
+Preferred date: [Date]
+Location: [Location]
+Preferred language: [Tamil/English/Telugu]`,
+      'copy-success': 'Template copied to clipboard!',
+      'copy-fail': 'Unable to copy automatically. Please copy the template manually.'
     },
     ta: {
-      'hero-badge': '40+ ஆண்டுகள் புனித சேவை',
-      'hero-title-1': 'புனித சடங்குகள்',
-      'hero-title-2': 'தெய்வீக ஆசிகள்',
-      'hero-desc': 'பக்தியுடனும் யதார்த்தத்துடனும் செய்யப்படும் பாரம்பரிய வேத சடங்குகள். இந்தியா மற்றும் சிங்கப்பூரில் கோயில் சேவை மூலம் தலைமுறைகளாக பரவிய சடங்குகளை சிங்கப்பூரில் உள்ள குடும்பங்களுக்கு வழங்குகிறோம்.',
-      'btn-book': 'சடங்கை பதிவு செய்க',
-      'btn-whatsapp': 'வாட்ஸ்அப் விசாரணை',
-      'feat-1': 'பாரம்பரிய வேதம்',
-      'feat-2': 'ஆங்கிலம் / தமிழ் / தெலுங்கு',
-      'feat-3': 'வீடு & கோயில்',
-      'services-subtitle': 'எங்கள் சேவைகள்',
-      'services-title': 'புனித சடங்குகள் & வழிபாடுகள்',
-      'services-desc': 'கிரகப்பிரவேசம் முதல் சிறப்பு பூஜைகள் வரை, உங்கள் வீட்டிலோ அல்லது கோயிலிலோ பக்தியுடன் செய்யப்படும் நம்பகமான வேத சடங்குகளைப் பெறுங்கள்.',
+      'brand-subtitle': 'வேத தெய்வீக சேவைகள்',
+      'nav-services': 'சேவைகள்',
+      'nav-about': 'பற்றி',
+      'nav-process': 'எப்படி பதிவு செய்வது',
+      'nav-contact': 'தொடர்பு',
+      'nav-book': 'இப்போது பதிவு செய்க',
+      'mobile-menu-title': 'மெனு',
+      'mobile-nav-services': 'சேவைகள்',
+      'mobile-nav-about': 'பற்றி',
+      'mobile-nav-process': 'எப்படி பதிவு செய்வது',
+      'mobile-nav-contact': 'தொடர்பு',
+      'mobile-select-language': 'மொழியைத் தேர்வுசெய்க',
+      'mobile-lang-en': 'English',
+      'mobile-lang-ta': 'தமிழ்',
+      'mobile-nav-book': 'சேவையை பதிவு செய்க',
+      'hero-title-1': 'வேத தெய்வீக சேவைகள்',
+      'hero-title-2': 'சிங்கப்பூர் குடும்பங்களுக்கு',
+      'hero-desc': 'சரவணாவுடன் பாரம்பரிய இந்து சடங்குகள், பூஜைகள் மற்றும் ஹோமங்களை பதிவு செய்யுங்கள். சிங்கப்பூரில் வீடுகளிலும் கோயில்களிலும் வேத முறைகளுடன் தெளிவான வழிகாட்டுதலோடு சேவை வழங்கப்படுகிறது.',
+      'services-subtitle': 'தெய்வீக சேவைகள்',
+      'services-title': 'இந்து பூஜை, ஹோமம் மற்றும் சடங்கு சேவைகள்',
+      'services-desc': 'கிரகப்பிரவேசம், சத்யநாராயண பூஜை, ஹோமம், அர்ச்சனை, பெயரிடும் சடங்கு மற்றும் முகூர்த்த வழிகாட்டுதல் உள்ளிட்ட பாரம்பரிய வேத சேவைகள் வீடு அல்லது கோயிலில் செய்யப்படுகிறது.',
       'about-subtitle': 'சரவணா பற்றி',
-      'about-title': 'நான்கு தசாப்தங்களான அர்ப்பணிப்புள்ள சேவை',
+      'about-title': 'நம்பகமான இந்து பூசாரி - <span class="text-gradient">40+ ஆண்டுகள் அனுபவம்</span>',
       'about-content': `
                     <p>சரவணா புனித சடங்குகளைச் செய்து, குடும்பங்களுக்கு பாரம்பரிய விழாக்களில் வழிகாட்டுதல் அளித்து சுமார் 40 ஆண்டுகள் அனுபவம் கொண்ட ஒரு அர்ப்பணிப்புள்ள கோயில் பூசாரி. தென் இந்தியாவின் பழங்கால கோயில்களில் தொடங்கிய அவரது பயணம், கடுமையான வேத மரபுகளில் பயிற்சி அளித்தது.</p>
                     <p>கடந்த சில ஆண்டுகளாக சிங்கப்பூரில் உள்ள இந்து சமூகத்திற்கு சேவை செய்து வருகிறார், இந்தியாவில் அவர் பயிற்சி பெற்ற அதே அளவிலான பக்தியையும் யதார்த்தத்தையும் வழங்குகிறார்.</p>
                     <p>கோயிலில் ஒரு எளிய அர்ச்சனை அல்லது உங்கள் புதிய வீட்டில் ஒரு சிறப்பு ஹோமம் தேவைப்பட்டாலும், சரவணா ஒவ்வொரு சடங்கிலும் பொறுமையையும் தெளிவையும் உண்மையான அக்கறையையும் கொண்டுவருகிறார்.</p>
-                `
+                `,
+      'about-feature-1-title': 'சிங்கப்பூரில் சேவை',
+      'about-feature-1-desc': 'வீடு மற்றும் கோயில் சேவைகள்',
+      'about-feature-2-title': 'பலமொழி சேவை',
+      'about-feature-2-desc': 'ஆங்கிலம், தமிழ், தெலுங்கு',
+      'about-feature-3-title': 'வேத பயிற்சி',
+      'about-feature-3-desc': 'பாரம்பரிய சம்ப்ரதாயம்',
+      'about-feature-4-title': 'தனிப்பட்ட கவனம்',
+      'about-feature-4-desc': 'தெளிவான விளக்கங்கள்',
+      'about-cta-text': 'தனிப்பயன் தேவைகளுக்கு தொடர்பு கொள்ளுங்கள்',
+      'process-subtitle': 'எளிய நடைமுறை',
+      'process-title': 'தெய்வீக சேவையை எப்படி பதிவு செய்வது',
+      'process-desc': 'உங்கள் இந்து சடங்கை எளிதாக ஏற்பாடு செய்ய தேவையான முழுமையான வழிகாட்டுதல்.',
+      'process-step1-title': 'சேவையைத் தேர்வு செய்க',
+      'process-step1-desc': 'எங்கள் சடங்கு பட்டியலில் இருந்து தேர்வு செய்யுங்கள் அல்லது தனிப்பயன் சேவை பற்றி விசாரிக்கலாம்.',
+      'process-step2-title': 'தேதியைத் தேர்வு செய்க',
+      'process-step2-desc': 'ஆன்லைன் அல்லது WhatsApp மூலம் பதிவு செய்யுங்கள். கிடைப்பை உடனே உறுதிப்படுத்துவோம்.',
+      'process-step3-title': 'தயார் ஆகுங்கள்',
+      'process-step3-desc': 'சமக்ரி பட்டியல் மற்றும் தயாரிப்பு வழிமுறைகள் வழங்கப்படும்.',
+      'process-step4-title': 'மங்களகரமான சடங்கு',
+      'process-step4-desc': 'பக்தியுடனும் மரபுடனும் உண்மையான சடங்கை அனுபவிக்கவும்.',
+      'process-cta-title': 'உங்கள் சடங்கை பதிவு செய்ய தயாரா?',
+      'process-cta-desc': 'புதிய வீட்டிற்கோ அல்லது சிறப்பு நிகழ்ச்சிக்கான ஆசிகளுக்கோ, ஒவ்வொரு படியிலும் நாங்கள் வழிகாட்டுகிறோம்.',
+      'process-cta-btn-1': 'கால அட்டவணையை பார்க்கவும்',
+      'process-cta-btn-2': 'விரைவு WhatsApp',
+      'other-services-content': `
+            <p class="font-semibold text-earth-900 mb-1">மற்ற சேவைகள் கிடைக்கும்</p>
+            <p class="text-earth-600 text-sm">தினசரி பூஜை, திருவிழா சிறப்பு பூஜைகள், வாஸ்து/கிரக சாந்தி, கோயில் நிகழ்ச்சி ஆதரவு மற்றும் கீழ்க்கண்ட கூடுதல் தெய்வீக சேவைகள் வழங்கப்படுகின்றன:</p>
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div class="bg-white/80 rounded-xl border border-earth-200 p-4">
+                <p class="text-xs font-semibold text-saffron-600 uppercase tracking-wider mb-2">ஹோமம் சேவைகள்</p>
+                <ul class="space-y-1 text-sm text-earth-700">
+                  <li>கணபதி ஹோமம்</li>
+                  <li>சுதர்ஷணம் ஹோமம்</li>
+                  <li>மகா மிருத்யுஞ்ஜய ஹோமம்</li>
+                  <li>ஆயுஷ்ய ஹோமம்</li>
+                  <li>மகாலட்சுமி (மகளட்சுமி) ஹோமம்</li>
+                  <li>நவகிரக ஹோமம்</li>
+                  <li>ஜாதக பரிகார ஹோமம்</li>
+                  <li>கால சர்ப்ப சாந்தி</li>
+                </ul>
+              </div>
+              <div class="bg-white/80 rounded-xl border border-earth-200 p-4">
+                <p class="text-xs font-semibold text-saffron-600 uppercase tracking-wider mb-2">சடங்குகள் & வழிகாட்டல்</p>
+                <ul class="space-y-1 text-sm text-earth-700">
+                  <li>60 / 70 / 80வது ஆண்டு சடங்கு</li>
+                  <li>புண்ய வாசனம்</li>
+                  <li>நிச்சயதார்த்தத்திற்கு நல்ல நாள் ஆலோசனை</li>
+                  <li>திருமணத்திற்கு நல்ல நாள் ஆலோசனை</li>
+                  <li>மற்ற நிகழ்ச்சிகளுக்கு நல்ல நாள் ஆலோசனை</li>
+                </ul>
+              </div>
+            </div>
+      `,
+      'other-services-ask-btn': 'இப்போது கேளுங்கள்',
+      'contact-subtitle': 'தொடர்பு',
+      'contact-title': 'சிங்கப்பூரில் தெய்வீக சேவைகளுக்கு தொடர்பு கொள்ளுங்கள்',
+      'contact-desc': 'சேவை கிடைப்புகள், பூஜை தேவைகள், சமக்ரி பட்டியல் மற்றும் தயாரிப்பு வழிகாட்டலுக்கு WhatsApp அல்லது அழைப்பின் மூலம் தொடர்பு கொள்ளுங்கள்.',
+      'contact-card1-title': 'WhatsApp',
+      'contact-card1-desc': 'வேகமான விசாரணை மற்றும் புதுப்பிப்புகள்',
+      'contact-card2-title': 'நேரடி அழைப்பு',
+      'contact-card3-title': 'இடம்',
+      'contact-card3-desc': 'சிங்கப்பூர் (தீவு முழுவதும் சேவை)',
+      'contact-template-title': 'விரைவு விசாரணை மாதிரி',
+      'contact-template-body': 'வணக்கம் 🙏<br><br>நான் [Service] சேவையை [Date] அன்று [Location] இல் பதிவு செய்ய விரும்புகிறேன்.<br>விருப்ப மொழி: [தமிழ்/ஆங்கிலம்/தெலுங்கு].<br>குறிப்புகள்: [சிறப்பு தேவைகள்]',
+      'contact-template-hint': 'இந்த மாதிரியை நகலெடுத்து WhatsApp-ல் அனுப்புங்கள்.',
+      'contact-custom-title': 'தனிப்பயன் தேவையா?',
+      'contact-custom-desc': 'சிறப்பு பூஜைகள் மற்றும் குடும்ப சடங்குகளுக்காக உங்கள் தேதி, இடம், மொழி ஆகியவற்றை பகிருங்கள். அடுத்த படிகளை தெளிவாக வழிகாட்டுவோம்.',
+      'contact-custom-point1': 'சேவை உறுதிப்பாடு மற்றும் கிடைக்கும் நேரம்',
+      'contact-custom-point2': 'பூஜை பொருட்கள் (சமக்ரி) பட்டியல்',
+      'contact-custom-point3': 'குடும்பத்திற்கான தெளிவான தயாரிப்பு வழிகாட்டல்',
+      'contact-custom-btn1': 'WhatsApp விசாரணை அனுப்புக',
+      'contact-custom-btn2': 'அழைக்கவும் +65 9000 0000',
+      'faq-subtitle': 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
+      'faq-title': 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
+      'faq-desc': 'சிங்கப்பூரில் இந்து தெய்வீக சேவைகளைப் பதிவு செய்வதற்கான பொதுவான கேள்விகள்.',
+      'faq-q1': 'எந்த தெய்வீக சேவைகள் கிடைக்கின்றன?',
+      'faq-a1': 'சரவணா கிரகப்பிரவேசம், சத்யநாராயண பூஜை, ஹோமம்/ஹவன், அர்ச்சனை, பெயரிடுதல் & அன்னபிராசனம், முகூர்த்த வழிகாட்டல், கணபதி ஹோமம், சுதர்ஷணம் ஹோமம், மகா மிருத்யுஞ்ஜய ஹோமம், ஆயுஷ்ய ஹோமம், மகாலட்சுமி ஹோமம், நவகிரக ஹோமம், ஜாதக பரிகார ஹோமம், கால சர்ப்ப சாந்தி, 60/70/80வது ஆண்டு சடங்கு, புண்ய வாசனம் மற்றும் நிச்சயதார்த்தம்/திருமணம் உள்ளிட்ட நல்ல நாள் ஆலோசனையை வழங்குகிறார்.',
+      'faq-q2': 'சடங்குகளை வீட்டில் செய்ய முடியுமா?',
+      'faq-a2': 'முடியும். பெரும்பாலான சேவைகள் சிங்கப்பூரில் உங்கள் வீட்டிலேயே செய்யப்படுகின்றன. தேவைக்கு ஏற்ப கோயில் சேவையும் வழங்கப்படும்.',
+      'faq-q3': 'எந்த மொழிகளில் சேவை கிடைக்கும்?',
+      'faq-a3': 'சடங்குகள் மற்றும் விளக்கங்கள் ஆங்கிலம், தமிழ், தெலுங்கு மொழிகளில் வழங்கப்படுகின்றன.',
+      'faq-q4': 'எவ்வளவு முன்பாக பதிவு செய்ய வேண்டும்?',
+      'faq-a4': 'சிறந்த கிடைப்புக்காக 1-2 வாரங்களுக்கு முன் பதிவு செய்யவும். வார இறுதி/விழா நாட்களுக்கு இன்னும் முன்பாக பதிவு செய்ய பரிந்துரைக்கப்படுகிறது.',
+      'footer-brand-subtitle': 'வேத தெய்வீக சேவைகள்',
+      'footer-desc': 'சிங்கப்பூரில் பூஜை, ஹோமம், கிரகப்பிரவேசம் மற்றும் குடும்ப சடங்குகளுக்கான நம்பகமான வேத தெய்வீக சேவைகள்.',
+      'footer-links-title': 'விரைவு இணைப்புகள்',
+      'footer-link-services': 'சேவைகள்',
+      'footer-link-about': 'பற்றி',
+      'footer-link-process': 'எப்படி பதிவு செய்வது',
+      'footer-link-contact': 'தொடர்பு',
+      'footer-link-faq': 'கேள்விகள்',
+      'footer-contact-title': 'தொடர்பு',
+      'footer-appointment-text': 'முன்பதிவு மூலம்',
+      'footer-copyright': '© 2026 Saravana Divine Services. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+      'footer-motto': 'ॐ Sarve Bhavantu Sukhinah (அனைவரும் இன்புற வாழ்க)',
+      'modal-title': 'சேவை பதிவு',
+      'modal-booking-label': 'நீங்கள் பதிவு செய்வது:',
+      'modal-method-label': 'உங்களுக்கு விருப்பமான பதிவு முறையைத் தேர்வு செய்யவும்:',
+      'modal-calendar-title': 'ஆன்லைன் காலண்டர்',
+      'modal-calendar-desc': 'நேரடி காலியிடங்களை பார்க்கவும்',
+      'modal-whatsapp-title': 'நேரடி WhatsApp',
+      'modal-whatsapp-desc': 'உடனடி உறுதிப்படுத்தல் செய்தி',
+      'modal-contact-options': 'தொடர்பு விருப்பங்களை பார்க்கவும்',
+      'toast-message': 'செய்தி அனுப்பப்பட்டது!',
+      'servicePopular': 'பிரபலமான',
+      'serviceBookLabel': 'பதிவு',
+      'serviceEnquireLabel': 'விசாரிக்க',
+      'serviceModes': ['நேரில்', 'நேரில்', 'நேரில்', 'கோயில்', 'நேரில்', 'ஆலோசனை'],
+      'serviceTitles': [
+        'கிரகப்பிரவேசம் (House Warming)',
+        'சத்யநாராயண பூஜை',
+        'ஹோமம் / ஹவன்',
+        'அர்ச்சனை / சிறப்பு பூஜை',
+        'பெயரிடுதல் & அன்னபிராசனம்',
+        'முகூர்த்தம் & வழிகாட்டல்'
+      ],
+      'serviceDescs': [
+        'புதிய வீட்டில் நுழைவு, வாஸ்து ஆசிகள் மற்றும் சுத்திகரிப்பு சடங்குகள் மூலம் அமைதியும் வளமும் கிடைக்க செய்யப்படும் புனித வழிபாடுகள்.',
+        'செல்வம், நல்வாழ்வு மற்றும் நன்றி உணர்வுக்கான பாரம்பரிய பூஜை. சிறப்பு நிகழ்ச்சிகளுக்கும் மாதாந்திர அனுஷ்டானங்களுக்கும் செய்யப்படுகிறது.',
+        'கணபதி ஹோமம், நவகிரக ஹோமம், சுதர்ஷண ஹோமம் போன்ற நோக்கங்களுக்கான அக்னி சடங்கு.',
+        'கோயிலில் தெய்வ அருளுக்கும் குடும்ப சங்கல்பத்திற்குமான சிறப்பு அர்ச்சனை. அபிஷேகம் மற்றும் தீபாராதனை உட்பட.',
+        'புதிய பிறந்த குழந்தைக்கான நாமகரணம் மற்றும் அன்னபிராசனம் போன்ற புனித சடங்குகள்.',
+        'முகூர்த்த நாள் தேர்வு, சடங்கு நடைமுறை, தயாரிப்பு பட்டியல் மற்றும் ஆன்மிக ஆலோசனையில் நிபுணர் வழிகாட்டல்.'
+      ],
+      'serviceTags': [
+        'வாஸ்து சாந்தி',
+        'கணபதி பூஜை',
+        'கதை',
+        'பிரசாதம்',
+        'அக்னி சடங்கு',
+        'மந்திரங்கள்',
+        'அபிஷேகம்',
+        'அர்ச்சனை',
+        'நாமகரணம்',
+        'அன்னபிராசனம்',
+        'முகூர்த்தம்',
+        'வழிகாட்டல்'
+      ],
+      'serviceNameMap': {
+        'House Warming': 'கிரகப்பிரவேசம்',
+        'Satyanarayana Puja': 'சத்யநாராயண பூஜை',
+        'Homam': 'ஹோமம்',
+        'Archana': 'அர்ச்சனை',
+        'Naming Ceremony': 'பெயரிடும் சடங்கு',
+        'Consultation': 'ஆலோசனை',
+        'Custom Service': 'தனிப்பயன் சேவை'
+      },
+      'copyTemplateText': `வணக்கம் 🙏
+
+நான் [Service] சேவையை [Date] அன்று [Location] இல் பதிவு செய்ய விரும்புகிறேன்.
+விருப்ப மொழி: [தமிழ்/ஆங்கிலம்/தெலுங்கு].
+குறிப்புகள்: [சிறப்பு தேவைகள்]`,
+      'enquiryMessageTemplate': `வணக்கம் 🙏
+
+{{service}} சேவை குறித்து விசாரிக்க விரும்புகிறேன்.
+விருப்ப தேதி: [தேதி]
+இடம்: [இடம்]
+விருப்ப மொழி: [தமிழ்/ஆங்கிலம்/தெலுங்கு]`,
+      'copy-success': 'மாதிரி நகலெடுக்கப்பட்டது!',
+      'copy-fail': 'தானாக நகலெடுக்க முடியவில்லை. தயவுசெய்து கையால் நகலெடுக்கவும்.'
     }
   };
 
@@ -1203,10 +1543,11 @@
 
     // Update content
     const t = translations[lang];
+    const htmlKeys = new Set(['about-title', 'about-content', 'other-services-content', 'contact-template-body']);
     Object.keys(t).forEach(key => {
       const el = document.getElementById(key);
       if (el) {
-        if (key === 'about-content') {
+        if (htmlKeys.has(key)) {
           el.innerHTML = t[key];
         } else {
           el.textContent = t[key];
@@ -1214,19 +1555,46 @@
       }
     });
 
-    // Update service titles/descriptions if needed
-    if (lang === 'ta') {
-      document.querySelectorAll('.service-title')[0].textContent = 'கிரகப்பிரவேசம் (House Warming)';
-      document.querySelectorAll('.service-desc')[0].textContent = 'புதிய வீட்டிற்கு புனித சடங்குகள், வாஸ்து ஆசிகள், மற்றும் சுத்திகரிப்பு விழாக்கள்.';
-      document.querySelectorAll('.service-title')[1].textContent = 'சத்யநாராயண பூஜை';
-      document.querySelectorAll('.service-desc')[1].textContent = 'செல்வத்திற்கும் நல்வாழ்விற்கும் பாரம்பரிய பூஜை.';
-    } else {
-      document.querySelectorAll('.service-title')[0].textContent = 'House Warming (Griha Pravesh)';
-      document.querySelectorAll('.service-desc')[0].textContent = 'Auspicious rituals for new home entry, vastu blessings, and purification ceremonies to bring peace and prosperity.';
-      document.querySelectorAll('.service-title')[1].textContent = 'Satyanarayana Puja';
-      document.querySelectorAll('.service-desc')[1].textContent = 'Traditional puja for prosperity, wellbeing, and gratitude. Can be performed for special occasions or monthly observances.';
+    const serviceTitles = document.querySelectorAll('.service-title');
+    const serviceDescs = document.querySelectorAll('.service-desc');
+    const serviceModes = document.querySelectorAll('.service-mode');
+    const serviceTags = document.querySelectorAll('.service-tag');
+    const serviceBookButtons = document.querySelectorAll('#services-grid button[onclick^="openBooking"]');
+    const serviceEnquireButtons = document.querySelectorAll('#services-grid button[onclick^="openEnquiry"]');
+    const popularBadge = document.querySelector('#services-grid .service-card .absolute.top-4.right-4');
+
+    t.serviceTitles.forEach((text, index) => {
+      if (serviceTitles[index]) serviceTitles[index].textContent = text;
+    });
+    t.serviceDescs.forEach((text, index) => {
+      if (serviceDescs[index]) serviceDescs[index].textContent = text;
+    });
+    t.serviceModes.forEach((text, index) => {
+      if (serviceModes[index]) serviceModes[index].textContent = text;
+    });
+    t.serviceTags.forEach((text, index) => {
+      if (serviceTags[index]) serviceTags[index].textContent = text;
+    });
+    serviceBookButtons.forEach((button) => {
+      button.textContent = t.serviceBookLabel;
+    });
+    serviceEnquireButtons.forEach((button) => {
+      button.textContent = t.serviceEnquireLabel;
+    });
+    if (popularBadge) {
+      popularBadge.textContent = t.servicePopular;
     }
 
+    const mobileMenuClose = document.querySelector('#mobile-menu button[aria-label]');
+    if (mobileMenuClose) {
+      mobileMenuClose.setAttribute('aria-label', lang === 'ta' ? 'மெனுவை மூடு' : 'Close menu');
+    }
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    if (menuToggle) {
+      const isOpen = document.getElementById('mobile-menu').classList.contains('open');
+      menuToggle.setAttribute('aria-label', lang === 'ta' ? (isOpen ? 'மெனுவை மூடு' : 'மெனுவை திற') : (isOpen ? 'Close menu' : 'Open menu'));
+    }
+    document.getElementById('modal-close-btn').setAttribute('aria-label', lang === 'ta' ? 'பதிவு சாளரத்தை மூடு' : 'Close booking dialog');
   }
 
   // Mobile Menu
@@ -1235,18 +1603,25 @@
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const isOpen = menu.classList.contains('open');
     const nextState = typeof forceState === 'boolean' ? forceState : !isOpen;
+    const openLabel = currentLang === 'ta' ? 'மெனுவை திற' : 'Open menu';
+    const closeLabel = currentLang === 'ta' ? 'மெனுவை மூடு' : 'Close menu';
 
     menu.classList.toggle('open', nextState);
     menu.setAttribute('aria-hidden', String(!nextState));
     menuToggle.setAttribute('aria-expanded', String(nextState));
-    menuToggle.setAttribute('aria-label', nextState ? 'Close menu' : 'Open menu');
+    menuToggle.setAttribute('aria-label', nextState ? closeLabel : openLabel);
     document.body.style.overflow = nextState ? 'hidden' : 'auto';
   }
 
   // Booking Modal
+  function localizeServiceName(service) {
+    const serviceMap = translations[currentLang]?.serviceNameMap || {};
+    return serviceMap[service] || service;
+  }
+
   function openBooking(service) {
     lastFocusedBeforeModal = document.activeElement;
-    document.getElementById('modal-service-name').textContent = service;
+    document.getElementById('modal-service-name').textContent = localizeServiceName(service);
     const modal = document.getElementById('booking-modal');
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
@@ -1258,12 +1633,9 @@
   }
 
   function openEnquiry(service) {
-    const message = `Vanakkam 🙏
-
-I would like to enquire about ${service}.
-Preferred date: [Date]
-Location: [Location]
-Preferred language: [Tamil/English/Telugu]`;
+    const localizedService = localizeServiceName(service);
+    const template = translations[currentLang]?.enquiryMessageTemplate || translations.en.enquiryMessageTemplate;
+    const message = template.replace('{{service}}', localizedService);
     const whatsappUrl = `https://wa.me/6590000000?text=${encodeURIComponent(message)}`;
     const popup = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     if (!popup) {
@@ -1282,16 +1654,12 @@ Preferred language: [Tamil/English/Telugu]`;
   }
 
   function copyTemplate() {
-    const template = `Vanakkam 🙏
-
-I would like to book [Service] on [Date] at [Location].
-Preferred language: [Tamil/English/Telugu].
-Notes: [Any special requirements]`;
+    const template = translations[currentLang]?.copyTemplateText || translations.en.copyTemplateText;
 
     navigator.clipboard.writeText(template).then(() => {
-      showToast('Template copied to clipboard!');
+      showToast(translations[currentLang]?.['copy-success'] || translations.en['copy-success']);
     }).catch(() => {
-      showToast('Unable to copy automatically. Please copy the template manually.');
+      showToast(translations[currentLang]?.['copy-fail'] || translations.en['copy-fail']);
     });
   }
 
